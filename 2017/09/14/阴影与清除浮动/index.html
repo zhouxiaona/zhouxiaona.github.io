@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>阴影与清除浮动 | web前端开发</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="box-shadow:盒子阴影  在水平轴上的偏移距离(必须填的) 在垂直轴上的偏移距离(必须填的) 阴影的模糊距离 阴影的尺寸，（增大的尺寸） 阴影的颜色 inset 内置阴影   12@requires_authorization	box-shadow:10px 10px 10px 10px red inset; text-shadow:文字阴影  在水平轴上的偏移距离(必须填的) 在垂直轴上">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阴影与清除浮动">
+<meta property="og:url" content="http://yoursite.com/2017/09/14/阴影与清除浮动/index.html">
+<meta property="og:site_name" content="web前端开发">
+<meta property="og:description" content="box-shadow:盒子阴影  在水平轴上的偏移距离(必须填的) 在垂直轴上的偏移距离(必须填的) 阴影的模糊距离 阴影的尺寸，（增大的尺寸） 阴影的颜色 inset 内置阴影   12@requires_authorization	box-shadow:10px 10px 10px 10px red inset; text-shadow:文字阴影  在水平轴上的偏移距离(必须填的) 在垂直轴上">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-09-14T13:59:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="阴影与清除浮动">
+<meta name="twitter:description" content="box-shadow:盒子阴影  在水平轴上的偏移距离(必须填的) 在垂直轴上的偏移距离(必须填的) 阴影的模糊距离 阴影的尺寸，（增大的尺寸） 阴影的颜色 inset 内置阴影   12@requires_authorization	box-shadow:10px 10px 10px 10px red inset; text-shadow:文字阴影  在水平轴上的偏移距离(必须填的) 在垂直轴上">
+  
+    <link rel="alternate" href="/atom.xml" title="web前端开发" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">web前端开发</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">lala的个人博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-阴影与清除浮动" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/14/阴影与清除浮动/" class="article-date">
+  <time datetime="2017-09-14T13:35:00.000Z" itemprop="datePublished">2017-09-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      阴影与清除浮动
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="box-shadow-盒子阴影"><a href="#box-shadow-盒子阴影" class="headerlink" title="box-shadow:盒子阴影"></a>box-shadow:盒子阴影</h2><blockquote>
+<ul>
+<li>在水平轴上的偏移距离(必须填的)</li>
+<li>在垂直轴上的偏移距离(必须填的)</li>
+<li>阴影的模糊距离</li>
+<li>阴影的尺寸，（增大的尺寸）</li>
+<li>阴影的颜色</li>
+<li>inset 内置阴影</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@requires_authorization</span></div><div class="line">	box-shadow:<span class="number">10</span>px <span class="number">10</span>px <span class="number">10</span>px <span class="number">10</span>px red inset;</div></pre></td></tr></table></figure>
+<h2 id="text-shadow-文字阴影"><a href="#text-shadow-文字阴影" class="headerlink" title="text-shadow:文字阴影"></a>text-shadow:文字阴影</h2><blockquote>
+<ul>
+<li>在水平轴上的偏移距离(必须填的)</li>
+<li>在垂直轴上的偏移距离(必须填的)</li>
+<li>阴影的模糊距离</li>
+<li>阴影的颜色</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@requires_authorization</span></div><div class="line">	text-shadow:<span class="number">10</span>px <span class="number">10</span>px <span class="number">10</span>px <span class="number">10</span>px purple;</div></pre></td></tr></table></figure>
+<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><blockquote>
+<p>1.给父级设置高度<br>2.父级设置<code>overflow:hidden;</code><br>3.在浮动元素的后面写一个空的块级元素<code>&lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;</code><br>4.使用伪类清浮动，效果跟2.的一样<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@requires_authorization</span></div><div class="line">	div:after&#123;</div><div class="line">		display:block;</div><div class="line">		content:<span class="string">""</span>;</div><div class="line">		height:<span class="number">0</span>;</div><div class="line">		clear:both;</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+<p>5.最重要的是要注意html的解析顺序，浮动元素与不浮动元素的顺序，效果不同，何时回到文档流很重要。</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/09/14/阴影与清除浮动/" data-id="cj7khz2i300044dzis4jc9a29" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/13/渐变and倒影and遮罩层mask/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">渐变and倒影and遮罩层mask</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/09/14/阴影与清除浮动/">阴影与清除浮动</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/13/渐变and倒影and遮罩层mask/">渐变and倒影and遮罩层mask</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/13/3D变换/">3D变换</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/11/flex弹性初识/">flex弹性初识</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/11/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 zhouna<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
