@@ -3,15 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>web前端开发</title>
+  <title>3D变换 | web前端开发</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="web前端开发">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="在css3中我们学习了一些跟动画有关的一些属性，除了之前所学到的animation和2D动画,今天又说到了真正可以写炫酷效果的3D动画。相关属性如下: transform:translate | rotate | scale;1.跟之前2D动画不同的是，3D动画少了skew倾斜，而且多了三维立体效果，即多了一个Z轴。2.在设置立体动画时，别忘了给父级设置perspective:景深距离;3.给立体">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3D变换">
+<meta property="og:url" content="http://yoursite.com/2017/09/13/3D变换/index.html">
 <meta property="og:site_name" content="web前端开发">
+<meta property="og:description" content="在css3中我们学习了一些跟动画有关的一些属性，除了之前所学到的animation和2D动画,今天又说到了真正可以写炫酷效果的3D动画。相关属性如下: transform:translate | rotate | scale;1.跟之前2D动画不同的是，3D动画少了skew倾斜，而且多了三维立体效果，即多了一个Z轴。2.在设置立体动画时，别忘了给父级设置perspective:景深距离;3.给立体">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-09-13T13:30:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="web前端开发">
+<meta name="twitter:title" content="3D变换">
+<meta name="twitter:description" content="在css3中我们学习了一些跟动画有关的一些属性，除了之前所学到的animation和2D动画,今天又说到了真正可以写炫酷效果的3D动画。相关属性如下: transform:translate | rotate | scale;1.跟之前2D动画不同的是，3D动画少了skew倾斜，而且多了三维立体效果，即多了一个Z轴。2.在设置立体动画时，别忘了给父级设置perspective:景深距离;3.给立体">
   
     <link rel="alternate" href="/atom.xml" title="web前端开发" type="application/atom+xml">
   
@@ -64,57 +68,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-渐变and倒影and遮罩层mask" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/13/渐变and倒影and遮罩层mask/" class="article-date">
-  <time datetime="2017-09-13T13:32:30.000Z" itemprop="datePublished">2017-09-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/13/渐变and倒影and遮罩层mask/">渐变and倒影and遮罩层mask</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="渐变分为线性渐变-and-径向渐变"><a href="#渐变分为线性渐变-and-径向渐变" class="headerlink" title="渐变分为线性渐变 and 径向渐变"></a>渐变分为线性渐变 and 径向渐变</h2><h3 id="线性渐变linear-gradient"><a href="#线性渐变linear-gradient" class="headerlink" title="线性渐变linear-gradient()"></a>线性渐变linear-gradient()</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">background:linear-gradient(to top,red,blue);</div><div class="line">background:linear-gradient(135deg,red,blue);   //方向可以是角度</div><div class="line">background:linear-gradient(135deg,red 30%/100px,blue 40%/120px);  //渐变的平铺区域是从30%~40%/100px~120px;</div><div class="line">background:-webkit-linear-gradient(bottom,red,blue);  //渐变的兼容处理</div></pre></td></tr></table></figure>
-<h3 id="径向渐变radial-gradient"><a href="#径向渐变radial-gradient" class="headerlink" title="径向渐变radial-gradient()"></a>径向渐变radial-gradient()</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">background:radial-gradient(red,blue);  //方向不可以是角度，圆的旋转无意义，默认从元素中心点开始平铺，即center</div><div class="line">background:radial-gradient(circle,red 30%/100px,blue 40%/120px); //长方形的径向渐变是椭圆，可以设置方向为circle来实现圆形径向渐变 </div><div class="line">background:-webkit-radial-gradient(red,blue);  //渐变的兼容处理</div></pre></td></tr></table></figure>
-<h2 id="倒影box-reflect"><a href="#倒影box-reflect" class="headerlink" title="倒影box-reflect"></a>倒影box-reflect</h2><ul>
-<li>三个值，一、倒影方向direction:above | below | left | right;</li>
-<li>二、倒影与元素的间距offset:number或者百分比，可以为负数;</li>
-<li>三、倒影样式mask-box-image:添加渐变色或者使用遮罩图片;<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">box-reflext:below 10px linear-gradient(to top,rgba(255,255,255,1.0),linear-gradient(255,255,255,0.3));</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="mask遮罩层-webkit-mask-image"><a href="#mask遮罩层-webkit-mask-image" class="headerlink" title="mask遮罩层-webkit-mask-image"></a>mask遮罩层-webkit-mask-image</h2><ul>
-<li>跟背景图片的设置差不多，遮罩层的设置也有<code>-webkit-mask-image| -webkit-mask-size | -webkit-mask-position | -webkit-mask-repeat;</code></li>
-</ul>
-<p>未完待续……</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/13/渐变and倒影and遮罩层mask/" data-id="cj7j2ys9700036mzi135hxsz1" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-3D变换" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-3D变换" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/09/13/3D变换/" class="article-date">
   <time datetime="2017-09-13T12:18:51.000Z" itemprop="datePublished">2017-09-13</time>
@@ -127,8 +81,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/13/3D变换/">3D变换</a>
+    <h1 class="article-title" itemprop="name">
+      3D变换
     </h1>
   
 
@@ -154,108 +108,28 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-flex弹性初识" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/11/flex弹性初识/" class="article-date">
-  <time datetime="2017-09-11T09:32:23.000Z" itemprop="datePublished">2017-09-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2017/09/13/渐变and倒影and遮罩层mask/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/11/flex弹性初识/">flex弹性初识</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>给一个元素设置伸缩属性，让他具有弹性盒子的某些特性，便于我们的认识。</p>
-<h2 id="display-flex-设置弹性盒子"><a href="#display-flex-设置弹性盒子" class="headerlink" title="display:flex; 设置弹性盒子"></a>display:flex; 设置弹性盒子</h2><ul>
-<li>第一个属性：flex-direction: row(默认值) | column | row-reverse | column-reverse;</li>
-<li>第二个属性：justify-content: flex-start(默认值) | flex-end | center | space-around | space-between;这个属性是设置弹性盒子里的弹性子项在主轴上的对其方式。</li>
-<li>第三个属性：align-items:flex-start | flex-end | center | stretch(默认值) | baseline;这个属性是设置弹性子项在交叉轴上的对其方式。</li>
-<li>第四个属性：flex-wrap:wrap | no-wrap(默认值) | wrap-reverse; 设置弹性子项在主轴上是否换行。</li>
-<li>第五个属性：align-content: flex-start | flex-end | center | space-between | space-around | stretch | baseline;这个属性只在弹性子项大于一行时才设置生效。</li>
-<li>复合写法：flex-flow:flex-direction flex-wrap;</li>
-</ul>
-<h2 id="弹性子项的属性设置"><a href="#弹性子项的属性设置" class="headerlink" title="弹性子项的属性设置"></a>弹性子项的属性设置</h2><ul>
-<li>order:整数设置，默认为0，可以对弹性子项进行前后顺序排列。</li>
-<li>flex-grow:剩余空间，默认0。伸缩元素的放大比例。</li>
-<li>flex-shrink:默认1。伸缩元素的缩小比例。当弹性子项的总宽度大于父级弹性盒子的总宽度，所有的弹性子项会默认平摊超出的尺寸，所以不会超出弹性盒子外界。</li>
-<li>flex-basis:设置弹性子项的width尺寸，默认auto;</li>
-<li>align-self:对单个弹性子项进行交叉轴的对其方式。</li>
-<li>复合写法: flex:flex-grow flex-shrink | flex-basis;</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/11/flex弹性初识/" data-id="cj7j2ys9200016mzi5whpje43" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/11/hello-world/" class="article-date">
-  <time datetime="2017-09-11T09:16:53.000Z" itemprop="datePublished">2017-09-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          渐变and倒影and遮罩层mask
         
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/11/hello-world/">Hello World</a>
-    </h1>
   
+    <a href="/2017/09/11/flex弹性初识/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">flex弹性初识</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/11/hello-world/" data-id="cj7j2ys9500026mzi6s14h6wf" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
 
 </section>
         
