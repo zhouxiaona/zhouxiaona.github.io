@@ -1,96 +1,147 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>3D变换 | web前端开发</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在css3中我们学习了一些跟动画有关的一些属性，除了之前所学到的animation和2D动画,今天又说到了真正可以写炫酷效果的3D动画。相关属性如下: transform:translate | rotate | scale;1.跟之前2D动画不同的是，3D动画少了skew倾斜，而且多了三维立体效果，即多了一个Z轴。2.在设置立体动画时，别忘了给父级设置perspective:景深距离;3.给立体">
-<meta property="og:type" content="article">
-<meta property="og:title" content="3D变换">
-<meta property="og:url" content="http://yoursite.com/2017/09/13/3D变换/index.html">
-<meta property="og:site_name" content="web前端开发">
-<meta property="og:description" content="在css3中我们学习了一些跟动画有关的一些属性，除了之前所学到的animation和2D动画,今天又说到了真正可以写炫酷效果的3D动画。相关属性如下: transform:translate | rotate | scale;1.跟之前2D动画不同的是，3D动画少了skew倾斜，而且多了三维立体效果，即多了一个Z轴。2.在设置立体动画时，别忘了给父级设置perspective:景深距离;3.给立体">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-14T14:00:27.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="3D变换">
-<meta name="twitter:description" content="在css3中我们学习了一些跟动画有关的一些属性，除了之前所学到的animation和2D动画,今天又说到了真正可以写炫酷效果的3D动画。相关属性如下: transform:translate | rotate | scale;1.跟之前2D动画不同的是，3D动画少了skew倾斜，而且多了三维立体效果，即多了一个Z轴。2.在设置立体动画时，别忘了给父级设置perspective:景深距离;3.给立体">
-  
-    <link rel="alternate" href="/atom.xml" title="web前端开发" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+<html lang="zh-CN">
 
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="在css3中我们学习了一些跟动画有关的一些属性，除了之前所学到的animation和2D动画,今天又说到了真正可以写炫酷效果的3D动画。相关属性如下:
+transform:translate | rotate | scale;1.跟之前2D动画不同的是，3D动画少了skew倾斜，而且多了三维立体效果">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="zhouna">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="3D变换"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="web前端开发"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>3D变换 - web前端开发</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">web前端开发</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">周娜的个人博客</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-3D变换" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/13/3D变换/" class="article-date">
-  <time datetime="2017-09-13T12:18:51.000Z" itemprop="datePublished">2017-09-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      3D变换
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在css3中我们学习了一些跟动画有关的一些属性，除了之前所学到的<code>animation</code>和<code>2D动画</code>,今天又说到了真正可以写炫酷效果的3D动画。相关属性如下:</p>
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">web前端开发</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>3D变换</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-09-13
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>在css3中我们学习了一些跟动画有关的一些属性，除了之前所学到的<code>animation</code>和<code>2D动画</code>,今天又说到了真正可以写炫酷效果的3D动画。相关属性如下:</p>
 <h2 id="transform-translate-rotate-scale"><a href="#transform-translate-rotate-scale" class="headerlink" title="transform:translate | rotate | scale;"></a>transform:translate | rotate | scale;</h2><p>1.跟之前2D动画不同的是，3D动画少了<code>skew</code>倾斜，而且多了三维立体效果，即多了一个Z轴。<br>2.在设置立体动画时，别忘了给父级设置<code>perspective:景深距离;</code><br>3.给立体盒子设置<code>transform-style:perspective-3d;</code><br>4.注意的就是对一个元素进行3D转换的时候，注意它的坐标轴也会发生相应地改变方向。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@requires_authorization</span></div><div class="line">transform:translate(<span class="number">100</span>px);</div><div class="line">transform:translateX(<span class="number">100</span>px);</div><div class="line">transform:translateY(<span class="number">100</span>px);</div><div class="line">transform:translateZ(<span class="number">100</span>px);</div></pre></td></tr></table></figure>
 <h3 id="只设置一个值的时候，只在x轴上进行平移相应的距离。"><a href="#只设置一个值的时候，只在x轴上进行平移相应的距离。" class="headerlink" title="只设置一个值的时候，只在x轴上进行平移相应的距离。"></a>只设置一个值的时候，只在x轴上进行平移相应的距离。</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@requires_authorization</span></div><div class="line">transform:rotateZ(<span class="number">30</span>deg);</div><div class="line">transform:rotateX(<span class="number">30</span>deg);</div><div class="line">transform:rotateY(<span class="number">30</span>deg);</div></pre></td></tr></table></figure>
@@ -99,122 +150,67 @@
 <h3 id="圆形开阔旋转代码"><a href="#圆形开阔旋转代码" class="headerlink" title="圆形开阔旋转代码:"></a>圆形开阔旋转代码:</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@requires_authorization</span></div><div class="line">	&lt;style&gt;</div><div class="line">		*&#123;</div><div class="line">			margin: <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">		html,body&#123;</div><div class="line">			height: <span class="number">100</span>vh;</div><div class="line">			perspective: <span class="number">3000</span>px;</div><div class="line">		&#125;</div><div class="line">		.wrap&#123;</div><div class="line">			width: <span class="number">200</span>px;</div><div class="line">			height: <span class="number">200</span>px;</div><div class="line">			border: <span class="number">1</span>px solid red;</div><div class="line">			margin: <span class="number">100</span>px auto;</div><div class="line">			transform-style: preserve<span class="number">-3</span>d;</div><div class="line">			position: relative;</div><div class="line">			transition: all <span class="number">10</span>s;</div><div class="line">		&#125;</div><div class="line">		.wrap:hover&#123;</div><div class="line">			transform: rotateY(<span class="number">360</span>deg);</div><div class="line">		&#125;</div><div class="line">		.wrap div&#123;</div><div class="line">			width: <span class="number">200</span>px;</div><div class="line">			height: <span class="number">200</span>px;</div><div class="line">			background: lightcyan;</div><div class="line">			position: absolute;</div><div class="line">			top: <span class="number">0</span>;</div><div class="line">			left: <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">		.box1&#123;</div><div class="line">			transform: translateZ(<span class="number">400</span>px);</div><div class="line">		&#125;</div><div class="line">		.box2&#123;</div><div class="line">			transform: translateZ(<span class="number">-400</span>px);</div><div class="line">		&#125;</div><div class="line">		.box3&#123;</div><div class="line">			transform: rotateY(<span class="number">30</span>deg) translateZ(<span class="number">400</span>px);</div><div class="line">		&#125;</div><div class="line">		.box4&#123;</div><div class="line">			transform: rotateY(<span class="number">30</span>deg) translateZ(<span class="number">-400</span>px);</div><div class="line">		&#125;</div><div class="line">		.box5&#123;</div><div class="line">			transform: rotateY(<span class="number">60</span>deg) translateZ(<span class="number">400</span>px);</div><div class="line">		&#125;</div><div class="line">		.box6&#123;</div><div class="line">			transform: rotateY(<span class="number">60</span>deg) translateZ(<span class="number">-400</span>px);</div><div class="line">		&#125;</div><div class="line">		.box7&#123;</div><div class="line">			transform: rotateY(<span class="number">90</span>deg) translateZ(<span class="number">400</span>px);</div><div class="line">		&#125;</div><div class="line">		.box8&#123;</div><div class="line">			transform: rotateY(<span class="number">90</span>deg) translateZ(<span class="number">-400</span>px);</div><div class="line">		&#125;</div><div class="line">		.box9&#123;</div><div class="line">			transform: rotateY(<span class="number">120</span>deg) translateZ(<span class="number">400</span>px);</div><div class="line">		&#125;</div><div class="line">		.box10&#123;</div><div class="line">			transform: rotateY(<span class="number">120</span>deg) translateZ(<span class="number">-400</span>px);</div><div class="line">		&#125;</div><div class="line">		.box11&#123;</div><div class="line">			transform: rotateY(<span class="number">150</span>deg) translateZ(<span class="number">400</span>px);</div><div class="line">		&#125;</div><div class="line">		.box12&#123;</div><div class="line">			transform: rotateY(<span class="number">150</span>deg) translateZ(<span class="number">-400</span>px);</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;div class="wrap"&gt;</div><div class="line">			&lt;div class="box1"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box2"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box3"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box4"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box5"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box6"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box7"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box8"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box9"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box10"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box11"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box12"&gt;&lt;/div&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/body&gt;</div></pre></td></tr></table></figure>
 <h3 id="这个开阔旋转就是元素进行旋转之后它的坐标轴方向变化。"><a href="#这个开阔旋转就是元素进行旋转之后它的坐标轴方向变化。" class="headerlink" title="这个开阔旋转就是元素进行旋转之后它的坐标轴方向变化。"></a>这个开阔旋转就是元素进行旋转之后它的坐标轴方向变化。</h3><h3 id="螺旋旋转代码："><a href="#螺旋旋转代码：" class="headerlink" title="螺旋旋转代码："></a>螺旋旋转代码：</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@requires_authorization</span></div><div class="line">	&lt;style&gt;</div><div class="line">		*&#123;</div><div class="line">			margin: <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">		html,body&#123;</div><div class="line">			height: <span class="number">100</span>vh;</div><div class="line">			perspective: <span class="number">3000</span>px;</div><div class="line">		&#125;</div><div class="line">		.wrap&#123;</div><div class="line">			width: <span class="number">50</span>px;</div><div class="line">			height: <span class="number">50</span>px;</div><div class="line">			margin: <span class="number">100</span>px auto;</div><div class="line">			border: <span class="number">1</span>px solid red;</div><div class="line">			position: relative;</div><div class="line">			transform-style: preserve<span class="number">-3</span>d;</div><div class="line">			transition: all <span class="number">10</span>s;</div><div class="line">		&#125;</div><div class="line">		.wrap:hover&#123;</div><div class="line">			transform: rotateY(<span class="number">3600</span>deg);</div><div class="line">		&#125;</div><div class="line">		.wrap div&#123;</div><div class="line">			width: <span class="number">50</span>px;</div><div class="line">			height: <span class="number">50</span>px;</div><div class="line">			background: lightblue;</div><div class="line">			position: absolute;</div><div class="line">			top: <span class="number">0</span>;</div><div class="line">			left: <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">		.box1&#123;</div><div class="line">			transform: translateY(<span class="number">-20</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box13&#123;</div><div class="line">			transform: translateY(<span class="number">-260</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box25&#123;</div><div class="line">			transform: translateY(<span class="number">220</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.box2&#123;</div><div class="line">			transform: rotateY(<span class="number">30</span>deg) translateY(<span class="number">0</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box14&#123;</div><div class="line">			transform: rotateY(<span class="number">30</span>deg) translateY(<span class="number">-240</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box26&#123;</div><div class="line">			transform: rotateY(<span class="number">30</span>deg) translateY(<span class="number">240</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.box3&#123;</div><div class="line">			transform: rotateY(<span class="number">60</span>deg) translateY(<span class="number">20</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box15&#123;</div><div class="line">			transform: rotateY(<span class="number">60</span>deg) translateY(<span class="number">-220</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box27&#123;</div><div class="line">			transform: rotateY(<span class="number">60</span>deg) translateY(<span class="number">260</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.box4&#123;</div><div class="line">			transform: rotateY(<span class="number">90</span>deg) translateY(<span class="number">40</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box16&#123;</div><div class="line">			transform: rotateY(<span class="number">90</span>deg) translateY(<span class="number">-200</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box28&#123;</div><div class="line">			transform: rotateY(<span class="number">90</span>deg) translateY(<span class="number">280</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.box5&#123;</div><div class="line">			transform: rotateY(<span class="number">120</span>deg) translateY(<span class="number">60</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box17&#123;</div><div class="line">			transform: rotateY(<span class="number">120</span>deg) translateY(<span class="number">-180</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box29&#123;</div><div class="line">			transform: rotateY(<span class="number">120</span>deg) translateY(<span class="number">300</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.box6&#123;</div><div class="line">			transform: rotateY(<span class="number">150</span>deg) translateY(<span class="number">80</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box18&#123;</div><div class="line">			transform: rotateY(<span class="number">150</span>deg) translateY(<span class="number">-160</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box30&#123;</div><div class="line">			transform: rotateY(<span class="number">150</span>deg) translateY(<span class="number">320</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.box7&#123;</div><div class="line">			transform: rotateY(<span class="number">180</span>deg) translateY(<span class="number">100</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box19&#123;</div><div class="line">			transform: rotateY(<span class="number">180</span>deg) translateY(<span class="number">-140</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box31&#123;</div><div class="line">			transform: rotateY(<span class="number">180</span>deg) translateY(<span class="number">340</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.box8&#123;</div><div class="line">			transform: rotateY(<span class="number">210</span>deg) translateY(<span class="number">120</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box20&#123;</div><div class="line">			transform: rotateY(<span class="number">210</span>deg) translateY(<span class="number">-120</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box32&#123;</div><div class="line">			transform: rotateY(<span class="number">210</span>deg) translateY(<span class="number">360</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.box9&#123;</div><div class="line">			transform: rotateY(<span class="number">240</span>deg) translateY(<span class="number">140</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box21&#123;</div><div class="line">			transform: rotateY(<span class="number">240</span>deg) translateY(<span class="number">-100</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box33&#123;</div><div class="line">			transform: rotateY(<span class="number">240</span>deg) translateY(<span class="number">380</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.box10&#123;</div><div class="line">			transform: rotateY(<span class="number">270</span>deg) translateY(<span class="number">160</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box22&#123;</div><div class="line">			transform: rotateY(<span class="number">270</span>deg) translateY(<span class="number">-80</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box34&#123;</div><div class="line">			transform: rotateY(<span class="number">270</span>deg) translateY(<span class="number">400</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.box11&#123;</div><div class="line">			transform: rotateY(<span class="number">300</span>deg) translateY(<span class="number">180</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box23&#123;</div><div class="line">			transform: rotateY(<span class="number">300</span>deg) translateY(<span class="number">-60</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box35&#123;</div><div class="line">			transform: rotateY(<span class="number">300</span>deg) translateY(<span class="number">420</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.box12&#123;</div><div class="line">			transform: rotateY(<span class="number">330</span>deg) translateY(<span class="number">200</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box24&#123;</div><div class="line">			transform: rotateY(<span class="number">330</span>deg) translateY(<span class="number">-40</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">		.box36&#123;</div><div class="line">			transform: rotateY(<span class="number">330</span>deg) translateY(<span class="number">440</span>px) translateZ(<span class="number">300</span>px);</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;div class="wrap"&gt;</div><div class="line">			&lt;div class="box1"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box2"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box3"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box4"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box5"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box6"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box7"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box8"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box9"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box10"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box11"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box12"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box13"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box14"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box15"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box16"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box17"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box18"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box19"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box20"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box21"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box22"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box23"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box24"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box25"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box26"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box27"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box28"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box29"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box30"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box31"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box32"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box33"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box34"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box35"&gt;&lt;/div&gt;</div><div class="line">			&lt;div class="box36"&gt;&lt;/div&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/body&gt;</div></pre></td></tr></table></figure>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/13/3D变换/" data-id="cj7kiykr40000cszid9b23yy5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2017/09/13/渐变and倒影and遮罩层mask/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          渐变and倒影and遮罩层mask
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/09/11/flex弹性初识/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">flex弹性初识</div>
-    </a>
-  
-</nav>
 
-  
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
 </article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
+    <!-- Footer -->
+    <hr />
 
-  
-    
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li></ul>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 zhouna<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
     </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/09/14/阴影与清除浮动/">阴影与清除浮动</a>
-          </li>
-        
-          <li>
-            <a href="/2017/09/13/渐变and倒影and遮罩层mask/">渐变and倒影and遮罩层mask</a>
-          </li>
-        
-          <li>
-            <a href="/2017/09/13/3D变换/">3D变换</a>
-          </li>
-        
-          <li>
-            <a href="/2017/09/11/flex弹性初识/">flex弹性初识</a>
-          </li>
-        
-          <li>
-            <a href="/2017/09/11/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 zhouna<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+
+
+    <!-- After footer scripts -->
     
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
-
-<script src="/js/script.js"></script>
-
-  </div>
 </body>
+
 </html>
