@@ -10,9 +10,7 @@
 
     <!--Description-->
     
-        <meta name="description" content="### 初步学习了作为前端怎么向后台获取数据，算是初识Ajax与json的应用，特此记录。
-### 数据都是被放在数据库中，作为举例，我们可以用` hot.json `与` test.json `两个json文件来示范获取数据。
-123456789101112131415161718&amp;lt;!-- ">
+        <meta name="description" content="初步学习了作为前端怎么向后台获取数据，算是初识Ajax与json的应用，特此记录。数据都是被放在数据库中，作为举例，我们可以用hot.json与test.json两个json文件来示范获取数据。123456789101112131415161718&amp;lt;!-- 创建对象 --&amp;gt;var req">
     
 
     <!--Author-->
@@ -184,12 +182,9 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <pre><code>### 初步学习了作为前端怎么向后台获取数据，算是初识Ajax与json的应用，特此记录。
-### 数据都是被放在数据库中，作为举例，我们可以用` hot.json `与` test.json `两个json文件来示范获取数据。
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 创建对象 --&gt;</div><div class="line">var request=new XMLHttpRequest();</div><div class="line">&lt;!-- 请求数据 --&gt;</div><div class="line">request.open(<span class="string">"GET"</span>,<span class="string">"hot.json"</span>,<span class="literal">true</span>);</div><div class="line">request.send();</div><div class="line">&lt;!-- 等待响应 --&gt;</div><div class="line">&lt;!-- request.readyState有5个值：</div><div class="line">	1.0　请求未初始化</div><div class="line">	2.1　服务器连接已建立</div><div class="line">	3.2　请求已接受</div><div class="line">	4.3　请求处理中</div><div class="line">	5.4　请求已完成，且响应已就绪。</div><div class="line">--&gt;</div><div class="line">request.onreadystatechange=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	<span class="keyword">if</span>(request.readyState==4 &amp;&amp; request.status==400)&#123;</div><div class="line">		console.log(JSON.parse(request.responsText));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<pre><code>###以上代码最终打印的是一个对象，我们可以直接对这个对象进行操作，获取我们需要的数据。
-![结果](/Users/lanou/Desktop/屏幕快照 2017-11-07 下午9.43.46.png)
-</code></pre>
+                <h3 id="初步学习了作为前端怎么向后台获取数据，算是初识Ajax与json的应用，特此记录。"><a href="#初步学习了作为前端怎么向后台获取数据，算是初识Ajax与json的应用，特此记录。" class="headerlink" title="初步学习了作为前端怎么向后台获取数据，算是初识Ajax与json的应用，特此记录。"></a>初步学习了作为前端怎么向后台获取数据，算是初识Ajax与json的应用，特此记录。</h3><h3 id="数据都是被放在数据库中，作为举例，我们可以用hot-json与test-json两个json文件来示范获取数据。"><a href="#数据都是被放在数据库中，作为举例，我们可以用hot-json与test-json两个json文件来示范获取数据。" class="headerlink" title="数据都是被放在数据库中，作为举例，我们可以用hot.json与test.json两个json文件来示范获取数据。"></a>数据都是被放在数据库中，作为举例，我们可以用<code>hot.json</code>与<code>test.json</code>两个json文件来示范获取数据。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 创建对象 --&gt;</div><div class="line">var request=new XMLHttpRequest();</div><div class="line">&lt;!-- 请求数据 --&gt;</div><div class="line">request.open(<span class="string">"GET"</span>,<span class="string">"hot.json"</span>,<span class="literal">true</span>);</div><div class="line">request.send();</div><div class="line">&lt;!-- 等待响应 --&gt;</div><div class="line">&lt;!-- request.readyState有5个值：</div><div class="line">	1.0　请求未初始化</div><div class="line">	2.1　服务器连接已建立</div><div class="line">	3.2　请求已接受</div><div class="line">	4.3　请求处理中</div><div class="line">	5.4　请求已完成，且响应已就绪。</div><div class="line">--&gt;</div><div class="line">request.onreadystatechange=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	<span class="keyword">if</span>(request.readyState==4 &amp;&amp; request.status==400)&#123;</div><div class="line">		console.log(JSON.parse(request.responsText));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="以上代码最终打印的是一个对象，我们可以直接对这个对象进行操作，获取我们需要的数据。"><a href="#以上代码最终打印的是一个对象，我们可以直接对这个对象进行操作，获取我们需要的数据。" class="headerlink" title="以上代码最终打印的是一个对象，我们可以直接对这个对象进行操作，获取我们需要的数据。"></a>以上代码最终打印的是一个对象，我们可以直接对这个对象进行操作，获取我们需要的数据。</h3><p><img src="http://upload-images.jianshu.io/upload_images/7432522-478e060e9ae8715d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-11-07 下午9.43.46.png"></p>
+
 
                 
             </div>
