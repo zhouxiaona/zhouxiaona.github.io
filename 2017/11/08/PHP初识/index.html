@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="对于PHP的初识就从今天开始，作为前端，获取数据的主要渠道的来龙去脉。因为有js语法的支持，php中的基本语法大致相同，所以学起来比较不那么吃力，只要关注与js不同的点就行了。下面就从最基础的数据类型学起吧。(自己电脑配置成服务器，略…)
+
+首先php所有的语句都是用&amp;lt;?php ?&amp;gt;包裹">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="zhouna">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="PHP初识"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="web前端开发"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>PHP初识 - web前端开发</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="github">
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Welcome to Lala's blog!</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/zhouxiaona">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/about-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>PHP初识</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-11-08
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>对于PHP的初识就从今天开始，作为前端，获取数据的主要渠道的来龙去脉。因为有js语法的支持，php中的基本语法大致相同，所以学起来比较不那么吃力，只要关注与js不同的点就行了。下面就从最基础的数据类型学起吧。(自己电脑配置成服务器，略…)</p>
+<ul>
+<li>首先php所有的语句都是用<code>&lt;?php ?&gt;</code>包裹起来的，就是他的专属标签。</li>
+<li><code>&lt;??&gt;</code>php短标签，但是不提倡，它取决于服务器的配置。</li>
+<li><code>&lt;% %&gt;</code>asp,更加不提倡。</li>
+<li>定义一个变量，用符号<code>$</code>,后面只能是英文字母，下划线，不能是数字。</li>
+<li>例如，<code>$name=&quot;zhouzhou&quot;;</code>输出的话，就用<code>echo $name;</code>输出数组的话，用<code>print_r($array);</code>。</li>
+<li><p>还有一个需要注意的点是:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$str</span>=<span class="string">"hello world"</span>;</div><div class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$str</span>"</span>;//hello world,（双引号里的变量会被解析，单引号里的不会）</div><div class="line"><span class="built_in">echo</span> <span class="string">'$str'</span>;//<span class="variable">$str</span></div><div class="line"><span class="built_in">echo</span> <span class="variable">$str</span>;//hello world</div></pre></td></tr></table></figure>
+</li>
+<li><p>不在php标签输出的时候，可以用语句<code>&lt;?=$name?&gt;</code>。</p>
+</li>
+<li><code>?</code>后面的就是传递给后台php的参数，可以在php文档中任意插入php语句，当一个网页被请求的时候，php首先会分析文档里的php语句，将php部分处理后，与静态网页部分一起输出到浏览器中。</li>
+</ul>
+<h2 id="数字类型"><a href="#数字类型" class="headerlink" title="数字类型"></a>数字类型</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$number</span>=1;</div><div class="line"><span class="variable">$number1</span>=-1;</div><div class="line"><span class="variable">$number2</span>=0123;//八进制</div><div class="line"><span class="variable">$number3</span>=0x123;//十六进制</div><div class="line"><span class="variable">$number</span>=<span class="variable">$number</span>+<span class="variable">$number1</span>;//正常的数学运算</div><div class="line"><span class="variable">$i</span>++;</div><div class="line">++<span class="variable">$i</span>;</div><div class="line"><span class="built_in">echo</span> <span class="variable">$number</span>;//输出变量</div></pre></td></tr></table></figure>
+<h2 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">	<span class="variable">$name</span>=<span class="string">"zhouzhou"</span>;//双引号里的变量能被解析</div><div class="line">	<span class="variable">$str1</span>=<span class="string">'hello world'</span>;//单引号里的变量不能被解析</div><div class="line">	<span class="variable">$str3</span>=&lt;&lt;&lt;EOF</div><div class="line">	hello <span class="variable">$name</span></div><div class="line">	world <span class="variable">$name</span></div><div class="line">EOF;//可以写多行字符串，此时里面的变量可以被解析。</div><div class="line">	<span class="variable">$name</span>.=<span class="string">"欢迎\'<span class="variable">$name</span>\'来这里"</span>;//　.运算符是连字符，当字符串里面包含单引号或者双引号时，需要转义。</div><div class="line">	<span class="built_in">echo</span> str1;</div><div class="line"></div><div class="line">	<span class="variable">$string</span>=<span class="string">"abcdefg"</span>;</div><div class="line">	<span class="built_in">echo</span> <span class="variable">$string</span>[1];//php的string可以像数组一样的取值</div></pre></td></tr></table></figure>
+<h2 id="数组与多维数组"><a href="#数组与多维数组" class="headerlink" title="数组与多维数组"></a>数组与多维数组</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$array</span>=array();//创建一个数组</div><div class="line"><span class="variable">$array</span>[0]=<span class="string">"数组a"</span>;</div><div class="line"><span class="variable">$array</span>[1]=<span class="string">"数组b"</span>;</div><div class="line"><span class="variable">$array</span>[<span class="string">"one"</span>]=<span class="string">"关联数组1"</span>;// 数字下标与键名下标都是数组</div><div class="line"><span class="variable">$array</span>[<span class="string">"two"</span>]=<span class="string">"关联数组2"</span>;</div><div class="line"><span class="variable">$array</span>[]=<span class="string">"数组c"</span>;//如果下标为空，取当前最大下标加一</div><div class="line"><span class="variable">$array</span>[10]=6;//可以任意指定键值。</div><div class="line"><span class="variable">$aa</span>=array(</div><div class="line">	array(1,2,3),</div><div class="line">	array(4,5,6),</div><div class="line">	<span class="string">"one"</span>=&gt;(<span class="string">"one"</span>,<span class="string">"two"</span>,<span class="string">"three"</span>),</div><div class="line">	<span class="string">"two"</span>=&gt;(<span class="string">"la"</span>,<span class="string">"so"</span>,<span class="string">"ra"</span>)</div><div class="line">);</div><div class="line">print_r(<span class="variable">$aa</span>);//输出数组</div><div class="line"><span class="built_in">echo</span> <span class="variable">$array</span>[0];//输出某个值</div><div class="line"></div><div class="line"><span class="variable">$arr1</span>=array(<span class="string">"one"</span>=&gt;1,<span class="string">"two"</span>=&gt;2,<span class="string">"three"</span>=&gt;3);</div><div class="line"><span class="variable">$arr2</span>=array(<span class="string">"one"</span>=&gt;1,<span class="string">"two"</span>=&gt;2,<span class="string">"three"</span>=&gt;3);</div><div class="line"><span class="variable">$arr</span>=<span class="variable">$arr1</span>+<span class="variable">$arr2</span>;//相同键名的取前面的数组</div><div class="line">print_r(<span class="variable">$arr</span>);</div></pre></td></tr></table></figure>
+<h2 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$res</span>=<span class="literal">true</span>;//也可以写TRUE，不区分大小写，输出的时候为1</div><div class="line"><span class="variable">$res1</span>=<span class="literal">false</span>;//啥都不输出</div><div class="line"><span class="built_in">echo</span> res1;//啥都没有...</div></pre></td></tr></table></figure>
+<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//php是一个弱类型的语言，定义变量的时候，不需要明确指定变量的数据类型，并且变量在程序执行过程中可以被赋值成任意类型。</div><div class="line"><span class="variable">$a</span>=10;</div><div class="line"><span class="variable">$a</span>=<span class="string">"hello"</span>;</div><div class="line"><span class="variable">$a</span>=<span class="literal">true</span>;</div><div class="line"><span class="variable">$a</span>=<span class="string">'10abc'</span>;//当一个字符串与数字类型的变量进行数学运算时，会自动转换成数字类型，转换成合法的十进制数字，编程时尽量避免混淆的语法。</div><div class="line"><span class="variable">$a</span>=<span class="variable">$a</span>+100;//结果为110</div><div class="line"><span class="built_in">echo</span> <span class="variable">$a</span>;</div></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/zhouxiaona" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 zhouna<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

@@ -10,17 +10,8 @@
 
     <!--Description-->
     
-        <meta name="description" content="box-shadow:盒子阴影
-在水平轴上的偏移距离(必须填的)
-在垂直轴上的偏移距离(必须填的)
-阴影的模糊距离
-阴影的尺寸，（增大的尺寸）
-阴影的颜色
-inset 内置阴影
-
-1box-shadow:10px 10px 10px 10px red inset;
-text-shadow:文字阴影
-">
+        <meta name="description" content="函数的学习不止前面提到的基础定义与使用部分，还有相对应的数组函数，字符串的函数，这样我们才能更好地操作前后台的数据交互与数据整理。下面就来看一看常用的函数吧。
+常用字符串函数123456789101112131415161718192021222324//substr(),与js中数组方法中的sub">
     
 
     <!--Author-->
@@ -30,7 +21,7 @@ text-shadow:文字阴影
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="阴影与清除浮动"/>
+        <meta property="og:title" content="PHP进阶之函数"/>
     
 
     <!--Open Graph Description-->
@@ -52,7 +43,7 @@ text-shadow:文字阴影
 
     <!-- Title -->
     
-    <title>阴影与清除浮动 - web前端开发</title>
+    <title>PHP进阶之函数 - web前端开发</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -164,13 +155,13 @@ text-shadow:文字阴影
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>阴影与清除浮动</h1>
+                    <h1>PHP进阶之函数</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
                         
-                            2017-09-14
+                            2017-11-09
                         
                     </span>
                 </div>
@@ -192,30 +183,10 @@ text-shadow:文字阴影
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h2 id="box-shadow-盒子阴影"><a href="#box-shadow-盒子阴影" class="headerlink" title="box-shadow:盒子阴影"></a>box-shadow:盒子阴影</h2><ul>
-<li>在水平轴上的偏移距离(必须填的)</li>
-<li>在垂直轴上的偏移距离(必须填的)</li>
-<li>阴影的模糊距离</li>
-<li>阴影的尺寸，（增大的尺寸）</li>
-<li>阴影的颜色</li>
-<li>inset 内置阴影</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">box-shadow:10px 10px 10px 10px red inset;</div></pre></td></tr></table></figure>
-<h2 id="text-shadow-文字阴影"><a href="#text-shadow-文字阴影" class="headerlink" title="text-shadow:文字阴影"></a>text-shadow:文字阴影</h2><ul>
-<li>在水平轴上的偏移距离(必须填的)</li>
-<li>在垂直轴上的偏移距离(必须填的)</li>
-<li>阴影的模糊距离</li>
-<li>阴影的颜色</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">text-shadow:10px 10px 10px 10px purple;</div></pre></td></tr></table></figure>
-<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><ul>
-<li>1.给父级设置高度</li>
-<li>2.父级设置<code>overflow:hidden;</code></li>
-<li>3.在浮动元素的后面写一个空的块级元素<code>&lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;</code></li>
-<li>4.使用伪类清浮动，效果跟2.的一样</li>
-<li>5.最重要的是要注意html的解析顺序，浮动元素与不浮动元素的顺序，效果不同，何时回到文档流很重要。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div:after&#123;</div><div class="line">	display:block;</div><div class="line">	content:<span class="string">""</span>;</div><div class="line">	height:0;</div><div class="line">	clear:both;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+                <p>函数的学习不止前面提到的基础定义与使用部分，还有相对应的数组函数，字符串的函数，这样我们才能更好地操作前后台的数据交互与数据整理。下面就来看一看常用的函数吧。</p>
+<h2 id="常用字符串函数"><a href="#常用字符串函数" class="headerlink" title="常用字符串函数"></a>常用字符串函数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//substr(),与js中数组方法中的substr相似，两个参数，`index`and`length`，还支持第一个为负数值，表示从倒数的位置开始。只有一个值时，表示从此位置截取到最后。(返回的是被截取的字符，不改变原来字符串的值)。</div><div class="line"><span class="variable">$str</span>=<span class="string">"abcdefg"</span>;</div><div class="line"><span class="built_in">echo</span> substr(<span class="variable">$str</span>,3);//defg</div><div class="line"><span class="built_in">echo</span> <span class="variable">$str</span>;//abcdefg</div><div class="line"></div><div class="line">//htmlspecialchars(),把特殊字符进行转义输出,不改变原来字符串的意义，即原来的字符串输出还是没转义的可以翻译标签的字符，得用新字符串容器把转以后的字符串装起来，输出容器。</div><div class="line"><span class="variable">$str</span>=<span class="string">"写链接：&lt;a href=\"\"&gt;这是一个链接&lt;/a&gt;"</span>;</div><div class="line"><span class="built_in">echo</span> <span class="variable">$str</span>;//此时输出的是一个可以点击的a标签，因为他被解析了</div><div class="line"><span class="variable">$str1</span>=htmlspecialchars(<span class="variable">$str</span>);</div><div class="line"><span class="built_in">echo</span> <span class="variable">$str1</span>;//此时输出的是写链接：&lt;a href=\<span class="string">"\"&gt;这是一个链接&lt;/a&gt;这句话，标签不会被解析。</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">//strlen(),返回的是字符串的长度</span></div><div class="line"><span class="string"><span class="variable">$str2</span>="</span>aaabbb<span class="string">";</span></div><div class="line"><span class="string">echo strlen(<span class="variable">$str2</span>);//6</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">//trim(),ltrim(),rtrim(),返回删除指定字符后的字符串，如果不指定第二个参数即要删除的字符，会默认去除以下字符串:</span></div><div class="line"><span class="string">//1."</span><span class="string">",普通空格符　</span></div><div class="line"><span class="string">//2."</span>\t<span class="string">",制表符</span></div><div class="line"><span class="string">//3."</span>\n<span class="string">",换行符</span></div><div class="line"><span class="string">//4."</span>\r<span class="string">",回车符</span></div><div class="line"><span class="string">//5."</span>\0<span class="string">",空字符节</span></div><div class="line"><span class="string">//6."</span>\x0B<span class="string">",垂直制表符</span></div><div class="line"><span class="string"><span class="variable">$string</span>="</span> abcdefg <span class="string">";</span></div><div class="line"><span class="string">echo trim(<span class="variable">$string</span>);//"</span>abcdefg<span class="string">"</span></div></pre></td></tr></table></figure>
+<h2 id="数组函数"><a href="#数组函数" class="headerlink" title="数组函数"></a>数组函数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//count(),返回的是数组的长度</div><div class="line"><span class="variable">$array</span>=array(1,2,3,4);</div><div class="line"><span class="built_in">echo</span> count(<span class="variable">$array</span>);//4</div><div class="line"></div><div class="line">//in_array(),查找指定元素是否在数组里存在，此函数区分大小写</div><div class="line"><span class="keyword">if</span>(in_array(<span class="string">"4"</span>,<span class="variable">$array</span>))&#123;</div><div class="line">	<span class="built_in">echo</span> <span class="string">"is here"</span>;</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">	<span class="built_in">echo</span> <span class="string">"ont here"</span>;</div><div class="line">&#125;</div><div class="line">//最终输出结果为<span class="string">"is here"</span></div></pre></td></tr></table></figure>
+<p>以上所学都是将变量输出到你的浏览器中，下面是将数据存储到服务器。</p>
 
 
                 
