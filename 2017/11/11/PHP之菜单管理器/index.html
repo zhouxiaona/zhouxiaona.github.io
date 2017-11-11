@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="在之前的PHP之表单中我们写了一个菜单的选择以及算出最终菜单的总价。今天我们要把它改成可以从前台添加菜单，并且自定义价格，生成新菜单的同时，顾客还可以选择自己喜欢的菜单，并且能算出总价以及优惠价格。🌈🌈🌈🌈🌈1.首先写出界面，前台可以上传菜的照片即上传的文件类型规定为$_FILES[&amp;qu">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="zhouna">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="PHP之菜单管理器"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="web前端开发"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>PHP之菜单管理器 - web前端开发</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="github">
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Welcome to Lala's blog!</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/zhouxiaona">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/about-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>PHP之菜单管理器</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-11-11
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>在之前的PHP之表单中我们写了一个菜单的选择以及算出最终菜单的总价。今天我们要把它改成可以从前台添加菜单，并且自定义价格，生成新菜单的同时，顾客还可以选择自己喜欢的菜单，并且能算出总价以及优惠价格。🌈🌈🌈🌈🌈<br>1.首先写出界面，前台可以上传菜的照片即上传的文件类型规定为<code>$_FILES[&quot;photo&quot;][&quot;type&quot;]=image/jpeg || image/png || image/gif</code>;一个可以设置菜名的输入框，还有设置菜的单价的输入框，以及一个提交按钮。<br>2.写一个表格，及菜单列表，分别是:菜的图片、菜名、价格、菜的数量（可输入的）、菜的选择按钮、菜的创建时间,最后一行要有一个提交菜单的按钮。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	//先获取上传文件并保存，输出数据展示在页面</div><div class="line">	<span class="keyword">if</span>(<span class="variable">$_POST</span>[<span class="string">"submit1"</span>])&#123;</div><div class="line">		<span class="variable">$filename</span>=upload(<span class="variable">$_FILES</span>[<span class="string">"photo"</span>]);</div><div class="line">		<span class="keyword">if</span>(<span class="variable">$filename</span>)&#123;</div><div class="line">			<span class="variable">$title</span>=htmlspecialchars(trim(<span class="variable">$_POST</span>[<span class="string">"title"</span>]));</div><div class="line">			savefile(<span class="variable">$filename</span>,<span class="variable">$title</span>,<span class="variable">$_POST</span>[<span class="string">"price"</span>]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="variable">$fileList</span>=outfile();</div><div class="line"></div><div class="line">	//封装函数接受数据</div><div class="line">	<span class="keyword">function</span> upload(<span class="variable">$upfile</span>)&#123;</div><div class="line">		<span class="variable">$type</span>=<span class="variable">$upfile</span>[<span class="built_in">type</span>];</div><div class="line">		<span class="keyword">if</span>(<span class="variable">$type</span>==<span class="string">"image/jpeg"</span> || <span class="variable">$type</span>==<span class="string">"image/png"</span> || <span class="variable">$type</span>==<span class="string">"image/gif"</span>)&#123;</div><div class="line">			move_uploaded_file(<span class="variable">$upfile</span>[<span class="string">"tmp_name"</span>],<span class="variable">$upfile</span>[<span class="string">"name"</span>]);</div><div class="line">			<span class="built_in">return</span> <span class="variable">$upfile</span>[<span class="string">"name"</span>];</div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			<span class="built_in">return</span> <span class="literal">false</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	//封装数据保存数据</div><div class="line">	<span class="keyword">function</span> savefile(<span class="variable">$filename</span>,<span class="variable">$title</span>,<span class="variable">$price</span>)&#123;</div><div class="line">		<span class="variable">$time</span>=date(<span class="string">"Y-m-d"</span>.<span class="string">" "</span>.<span class="string">"H:i:s"</span>);</div><div class="line">		<span class="variable">$fp</span>=fopen(<span class="string">"menu.txt"</span>,<span class="string">"a+"</span>);</div><div class="line">		fwrite(<span class="variable">$fp</span>,<span class="variable">$filename</span>.<span class="string">" "</span>.<span class="variable">$title</span>.<span class="string">" "</span>.<span class="variable">$price</span>.<span class="string">" "</span>.<span class="variable">$time</span>.<span class="string">"\n"</span>);</div><div class="line">		fclose(<span class="variable">$fp</span>);</div><div class="line">	&#125;</div><div class="line">	//封装函数输出数据</div><div class="line">	<span class="keyword">function</span> <span class="function"><span class="title">outfile</span></span>()&#123;</div><div class="line">		<span class="variable">$fp</span>=fopen(<span class="string">"menu.txt"</span>,<span class="string">"r"</span>);</div><div class="line">		<span class="variable">$array</span>=array();</div><div class="line">		<span class="keyword">while</span>(!feof(<span class="variable">$fp</span>))&#123;</div><div class="line">			<span class="variable">$array</span>[]=fgets(<span class="variable">$fp</span>);</div><div class="line">		&#125;</div><div class="line">		fclose(<span class="variable">$fp</span>);</div><div class="line">		<span class="built_in">return</span> <span class="variable">$array</span>;</div><div class="line">	&#125;</div><div class="line">	//=======================菜单列表的设置===========================</div><div class="line">	<span class="keyword">if</span>(!empty(<span class="variable">$_POST</span>[<span class="string">"submit2"</span>]))&#123;</div><div class="line">		<span class="variable">$indexArr</span>=<span class="variable">$_POST</span>[<span class="string">"menu"</span>];</div><div class="line">		<span class="variable">$countArr</span>=<span class="variable">$_POST</span>[<span class="string">"count"</span>];</div><div class="line">		<span class="variable">$line</span>=<span class="string">"您选择的有:"</span>;</div><div class="line">		foreach(<span class="variable">$indexArr</span> as <span class="variable">$key</span> =&gt; <span class="variable">$val</span>)&#123;</div><div class="line">			<span class="variable">$arr1</span>=explode(<span class="string">" "</span>,<span class="variable">$fileList</span>[<span class="variable">$val</span>]);</div><div class="line">			<span class="variable">$filename</span>=<span class="variable">$arr1</span>[1];</div><div class="line">			<span class="variable">$amount</span>=<span class="variable">$countArr</span>[<span class="variable">$val</span>];</div><div class="line">			<span class="variable">$line</span>.=<span class="variable">$filename</span>.<span class="string">" "</span>;</div><div class="line">			<span class="variable">$amountNum</span>+=<span class="variable">$amount</span>;</div><div class="line">			<span class="variable">$countMoney</span>+=<span class="variable">$arr1</span>[2]*<span class="variable">$amount</span>;</div><div class="line">			<span class="built_in">echo</span> <span class="string">"你选了"</span>.<span class="variable">$filename</span>.<span class="string">",共"</span>.<span class="variable">$amount</span>.<span class="string">"件,总价为￥"</span>.<span class="variable">$arr1</span>[2]*<span class="variable">$amount</span>.<span class="string">"\n"</span>；</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">echo</span> <span class="variable">$line</span>.<span class="string">",一共"</span>.<span class="variable">$amountNum</span>.<span class="string">","</span>总价为￥<span class="string">".<span class="variable">$countMoney</span>;</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">	&#125;</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">?&gt;</span></div><div class="line"><span class="string">//html代码</span></div><div class="line"><span class="string">&lt;form action="</span><span class="string">" method="</span>post<span class="string">" enctype="</span>multipart/form-data<span class="string">"&gt;</span></div><div class="line"><span class="string">	&lt;input type="</span>file<span class="string">" name="</span>photo<span class="string">" /&gt;</span></div><div class="line"><span class="string">	设置菜单名称:&lt;input type="</span>text<span class="string">" name="</span>title<span class="string">"&gt;</span></div><div class="line"><span class="string">	设置菜单价格:&lt;input type="</span>text<span class="string">" name="</span>price<span class="string">"&gt;</span></div><div class="line"><span class="string">	&lt;input type="</span>submit<span class="string">" name="</span>submit1<span class="string">" value="</span>上传<span class="string">"&gt;</span></div><div class="line"><span class="string">	//=====================菜单列表==============================</span></div><div class="line"><span class="string">	&lt;table border="</span>2<span class="string">" cellspacing="</span>1<span class="string">" cellpadding="</span>5<span class="string">"&gt;</span></div><div class="line"><span class="string">		&lt;tr&gt;</span></div><div class="line"><span class="string">			&lt;th colspan="</span>7<span class="string">"&gt;大饭店菜单&lt;/th&gt;</span></div><div class="line"><span class="string">		&lt;/tr&gt;</span></div><div class="line"><span class="string">		&lt;tr&gt;</span></div><div class="line"><span class="string">			&lt;td&gt;图片&lt;/td&gt;</span></div><div class="line"><span class="string">			&lt;td&gt;菜名&lt;/td&gt;</span></div><div class="line"><span class="string">			&lt;td&gt;价格&lt;/td&gt;</span></div><div class="line"><span class="string">			&lt;td&gt;菜单小计&lt;/td&gt;</span></div><div class="line"><span class="string">			&lt;td&gt;选择菜单&lt;/td&gt;</span></div><div class="line"><span class="string">			&lt;td　colspan="</span>2<span class="string">"&gt;菜单创建时间&lt;/td&gt;</span></div><div class="line"><span class="string">		&lt;/tr&gt;</span></div><div class="line"><span class="string">		&lt;?php</span></div><div class="line"><span class="string">			foreach(<span class="variable">$fileList</span> as <span class="variable">$key</span> =&gt; <span class="variable">$val</span>)&#123;</span></div><div class="line"><span class="string">				<span class="variable">$arr</span>=explode("</span> <span class="string">",<span class="variable">$val</span>);</span></div><div class="line"><span class="string">				if(!empty(<span class="variable">$arr</span>[0]))&#123;</span></div><div class="line"><span class="string">		?&gt;</span></div><div class="line"><span class="string">			&lt;tr&gt;</span></div><div class="line"><span class="string">				&lt;td&gt;&lt;img src="</span>&lt;?=<span class="variable">$arr</span>[0]?&gt;<span class="string">"&gt;&lt;/td&gt;</span></div><div class="line"><span class="string">				&lt;td&gt;&lt;?=<span class="variable">$arr</span>[1]?&gt;&lt;/td&gt;</span></div><div class="line"><span class="string">				&lt;td&gt;￥&lt;?=<span class="variable">$arr</span>[2]?&gt;&lt;/td&gt;</span></div><div class="line"><span class="string">				&lt;td&gt;&lt;input type="</span>text<span class="string">" name="</span>count[]<span class="string">"&gt;&lt;/td&gt;</span></div><div class="line"><span class="string">				&lt;td&gt;&lt;input type="</span>checkbox<span class="string">" name="</span>menu[]<span class="string">" value="</span>&lt;?<span class="variable">$key</span>?&gt;<span class="string">"&gt;&lt;/td&gt;</span></div><div class="line"><span class="string">				&lt;td colspan="</span>2<span class="string">"&gt;&lt;?=<span class="variable">$arr</span>[3]."</span> <span class="string">"?&gt;&lt;?=<span class="variable">$arr</span>[4]?&gt;&lt;/td&gt;</span></div><div class="line"><span class="string">			&lt;/tr&gt;</span></div><div class="line"><span class="string">		&lt;?php &#125; &#125; ?&gt;</span></div><div class="line"><span class="string">		&lt;tr&gt;</span></div><div class="line"><span class="string">			&lt;td colspan="</span>7<span class="string">"&gt;&lt;input type="</span>submit<span class="string">" name="</span>submit2<span class="string">" value="</span>提交菜单<span class="string">"&gt;&lt;/td&gt;</span></div><div class="line"><span class="string">		&lt;/tr&gt;</span></div><div class="line"><span class="string">	&lt;/table&gt;</span></div><div class="line"><span class="string">&lt;/form&gt;</span></div></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/zhouxiaona" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 zhouna<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
