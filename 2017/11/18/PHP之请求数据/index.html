@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="前面说过对于数据的处理有两种方式，一种是get,一种是post，这两种方式既可以提交数据又可以发送数据，所以不能以字面单词的意思认为get是获取数据，而post是发送数据，虽然刚学习php时我也这样以为，但事实不是这样，所以要分清楚两者的区别。
+get和post的区别
+get方式提交数据的时候对于数">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="zhouna">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="PHP之请求数据"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="web前端开发"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>PHP之请求数据 - web前端开发</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="github">
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Welcome to Lala's blog!</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/zhouxiaona">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/about-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>PHP之请求数据</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-11-18
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>前面说过对于数据的处理有两种方式，一种是<code>get</code>,一种是<code>post</code>，这两种方式既可以提交数据又可以发送数据，所以不能以字面单词的意思认为<code>get</code>是获取数据，而<code>post</code>是发送数据，虽然刚学习php时我也这样以为，但事实不是这样，所以要分清楚两者的区别。</p>
+<h2 id="get和post的区别"><a href="#get和post的区别" class="headerlink" title="get和post的区别"></a>get和post的区别</h2><ol>
+<li>get方式提交数据的时候对于数据的保密性不太好，因为get方式提交数据的时候是通过url链接?后面的参数来提交给后台的，都可以直接在链接里看到，所以不太安全。</li>
+<li>还有就是get数据有限制</li>
+<li>post相对而言安全一点，需要选择https协议</li>
+<li>post数据是在http请求头的主体部分发送的</li>
+<li>post数据理论上没有限制</li>
+</ol>
+<h2 id="数据提交方式："><a href="#数据提交方式：" class="headerlink" title="数据提交方式："></a>数据提交方式：</h2><h3 id="1-通过url链接提交数据，利用url链接-后面的参数"><a href="#1-通过url链接提交数据，利用url链接-后面的参数" class="headerlink" title="1.通过url链接提交数据，利用url链接?后面的参数"></a>1.通过url链接提交数据，利用url链接?后面的参数</h3><p><code>&quot;http://localhost/PHP/PHP2/lesson01.php?pic=&quot;+inp.value</code>,所以可以在js的script标签中使用此语句,后面的参数定义一个变量可以把数据传过去，这种方式是<code>get</code>方式。</p>
+<h3 id="2-form表单方式提交"><a href="#2-form表单方式提交" class="headerlink" title="2.form表单方式提交"></a>2.<code>form</code>表单方式提交</h3><p>这种方式可以实现<code>post</code>和<code>get</code>两种数据传送方式，可以跨域提交数据，使用<code>iframe</code>的方式实现局部刷新。但是<code>iframe</code>不支持跨域。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;form action=<span class="string">""</span> method=<span class="string">"post"</span> enctype=<span class="string">"enctype="</span>multipart/form-data<span class="string">""</span>&gt;</div><div class="line">	&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"name"</span>&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
+<p>所以上面的语句要想在后台获得<code>input</code>中的数据就在<code>php</code>中用<code>$_POST[&#39;name&#39;]</code>来获取，如果是<code>get</code>就用<code>$_GET[&#39;name&#39;]</code>。</p>
+<h3 id="3-通过script标签的src属性"><a href="#3-通过script标签的src属性" class="headerlink" title="3.通过script标签的src属性"></a>3.通过<code>script</code>标签的<code>src</code>属性</h3><blockquote>
+<p>只能实现<code>get</code>方式<br>可以独立地实现局部刷新<br>支持跨域<br><code>json</code>,<code>json串</code>，<code>JSON.parse()</code>把<code>json串</code>转换成<code>json</code>对象。<br><code>jsonp</code>,一种跨域请求方式，向服务器请求的同时提供给后台一个回调函数名，服务器返回数据时将数据包裹在函数名中，一起返回，由于我们使用的是<code>script</code>标签，浏览器端一旦接收到返回数据，立即执行该函数。但是<code>jsonp</code>只支持<code>get</code>方式提交。</p>
+</blockquote>
+<h3 id="4-XHR小黄人对象"><a href="#4-XHR小黄人对象" class="headerlink" title="4.XHR小黄人对象"></a>4.<code>XHR</code>小黄人对象</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var xhr=new XMLHttpRequest();</div><div class="line">xhr.onload=<span class="function"><span class="title">function</span></span>()&#123;//数据接收成功后的执行函数</div><div class="line">	var obj=JSON.parse(this.responseText);//返回的数据是json串，要把它转换成json对象</div><div class="line">&#125;</div><div class="line">var formData=new FormData();//一种数据保存对象，可以跟xhr结合使用，注意格式。</div><div class="line">formData.append(<span class="string">"name"</span>,<span class="string">"zhouzhou"</span>);</div><div class="line">xhr.open(<span class="string">"get/post"</span>,<span class="string">"url"</span>,<span class="literal">true</span>);//第一个参数是表明用哪种方式获取数据，第二个参数是要获取数据的后台链接，第三个参数是同步还是异步执行。`<span class="literal">true</span>`异步，默认。`<span class="literal">false</span>`同步。</div><div class="line">xhr.send(formData);//获取数据可以不填，如果要发送数据就把要把发送的数据添加到括号里。</div></pre></td></tr></table></figure>
+<p>关于<code>xhr</code>的属性，<code>readyState</code>,即<code>XHR</code>的执行状态，<code>0--初始状态</code>、<code>1--创建链接</code>、<code>2--发送数据</code>、<code>3--服务器开始返回数据</code>、<code>4--数据接收完毕</code>。<br>关于<code>xhr</code>的事件，<code>onreadyStateChange()</code>当小黄人状态发生变化的时候会执行。<code>onload()</code>接收数据完毕之后才执行。</p>
+<h3 id="5-ajax封装"><a href="#5-ajax封装" class="headerlink" title="5.$ajax封装"></a>5.<code>$ajax</code>封装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">$,ajax(&#123;</div><div class="line">	<span class="built_in">type</span>:<span class="string">"get"</span>,//接收数据的方式，和前面提过的一样</div><div class="line">	url:<span class="string">"test.php"</span>,//索取数据的后台链接地址</div><div class="line">	dataType:<span class="string">"json"</span>,//返回的数据类型，默认是文本类型，如果是json,则严格要求后台按照json格式传送字符串</div><div class="line">	async:<span class="string">"true"</span>,//异步执行还是同步执行</div><div class="line">	data:&#123;name:<span class="string">"zhouzhou"</span>,sex:<span class="string">"男"</span>&#125;,//需要传送的数据,注意格式，键值对的形式</div><div class="line">	success:<span class="keyword">function</span>(data)&#123;//数据请求成功后的回调函数，此时的返回数据已经被转换完json对象了，被封装好了，可以直接用。</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line">//load()函数</div><div class="line">//直接将请求接口添加到引用元素上，比如有一个id为show的div,另外有一个子页面nav.html，$(<span class="string">"<span class="variable">$show</span>"</span>).load(nav.html);就可以把nav.html的内容加载在show div中。</div><div class="line"></div><div class="line">//$.get(<span class="string">"url"</span>,&#123;&#125;,<span class="keyword">function</span>(data,status)&#123;&#125;,<span class="string">"json"</span>/可以省略);</div><div class="line"></div><div class="line">//$.post();与$.get();参数一样，但是提交方式是post.</div></pre></td></tr></table></figure>
+<p>以上就是所有的数据提交和数据获取方式，是前后台交互的关键所在。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/zhouxiaona" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 zhouna<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
