@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="一、cookie是存储在浏览器客户端的一小片数据，cookie可以同时被前台和后台操作，即在前台页面可以获取，在后台php页面也可以获取，后面会介绍这两种方式的设置和获取cookie的方法。cookie可以跨页面存储，cookie不可以跨服务器访问，可以跨域访问。cookie是有生命期的，默认是浏览">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="zhouna">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="PHP之cookie and session"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="web前端开发"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>PHP之cookie and session - web前端开发</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="github">
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Welcome to Lala's blog!</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/zhouxiaona">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/about-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>PHP之cookie and session</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-11-20
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>一、<code>cookie</code>是存储在浏览器客户端的一小片数据，<code>cookie</code>可以同时被前台和后台操作，即在前台页面可以获取，在后台php页面也可以获取，后面会介绍这两种方式的设置和获取cookie的方法。<code>cookie</code>可以跨页面存储，<code>cookie</code>不可以跨服务器访问，可以跨域访问。<code>cookie</code>是有生命期的，默认是浏览器进程相同，如果进程退出，<code>cookie</code>会被销毁，所以下面我们会说到如何给<code>cookie</code>设置过期时间。</p>
+<ul>
+<li><p>在前台获取和设置<code>cookie</code>的方法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">//首先是设置一个cookie值并设置过期时间</div><div class="line">var current_date=new Date();</div><div class="line">current_date.setDate(current_date.getDate()+1);//设置过期时间为当前时间的第二天</div><div class="line">var expires_str=current_date.toGMTString();//转换时间格式为字符串</div><div class="line">document.cookie=<span class="string">"user=zhou;path=/;expires="</span>+expires+str;//path=/；属性指定cookie生效的路径，包含子目录</div><div class="line"></div><div class="line">//然后是获取cookie值</div><div class="line">console.log(document.cookie);</div><div class="line"></div><div class="line">//所以封装了setCookie()和getCookie方法</div><div class="line"><span class="keyword">function</span> getCookie(key)&#123;</div><div class="line">	var str=document.cookie;</div><div class="line">	var len=key.length+1;</div><div class="line">	var start=str.indexOf(key)+len;</div><div class="line">	var end=str.indexOf(<span class="string">";"</span>,start)==-1?str.length:str.indexOf(<span class="string">";"</span>,start);</div><div class="line">	var val=str.substring(start,end);</div><div class="line">	<span class="built_in">return</span> val;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">function</span> setCookie(key,value,path,expires)&#123;</div><div class="line">	var current_date=new Date();</div><div class="line">	current_date.setDate(current_date.getDate()+1);</div><div class="line">	var expires_str=current_date.toGMTString();</div><div class="line">	document.cookie=key+<span class="string">"="</span>+value+<span class="string">";path="</span>+path+<span class="string">";expires="</span>+expires_str;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在后台设置和获取cookie值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//先是设置cookie值，函数setcookie(key,value,path,expires)</div><div class="line">setcookie(<span class="string">"user"</span>,<span class="string">"zhou"</span>,time()+24*3600);//过期时间是时间戳</div><div class="line">//在后台获取cookie值也是通过一个数组<span class="variable">$_COOKIE</span>[<span class="string">'user'</span>],php将所有的cookie值存储在数组<span class="variable">$_COOKIE</span>中</div><div class="line"><span class="built_in">echo</span> <span class="variable">$_COOKIE</span>[<span class="string">'user'</span>];//即可获得cookie值</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>二、获取cookie因为cookie可以跨页面访问，但是cookie有很多缺点：</p>
+<ul>
+<li>1.数量：浏览器下的cookie数量不能超过300个，每个服务器不能超过20个,所有的cookie包含他们的属性所占的数据大小不能超过4k;</li>
+<li>2.cookie是不安全的，他可以被客户端更改，因此不要用cookie来存储重要或者敏感的数据;<h3 id="所以才有了PHPSESSID"><a href="#所以才有了PHPSESSID" class="headerlink" title="所以才有了PHPSESSID:"></a>所以才有了<code>PHPSESSID</code>:</h3></li>
+<li>1.<code>session</code>数据存储在<code>session_id</code>,该<code>session_id</code>通过<code>cookie</code>传送到前台，默认的<code>session_id</code>.</li>
+<li>2.前台只能看到<code>session_id</code>，而不能修改<code>session</code>值。</li>
+<li>3.使用session之前，需要先开启会话，即<code>session_start();</code></li>
+<li>4.session存储比较安全，但是如果session数量过多，会导致服务器性能下降。</li>
+<li>5.session存储在<code>$_SESSION</code>数组里<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">session_start();</div><div class="line"><span class="variable">$_SESSION</span>[<span class="string">'user'</span>]=<span class="variable">$_POST</span>[<span class="string">'username'</span>];//设置cookie值</div><div class="line"><span class="built_in">echo</span> <span class="variable">$_SESSION</span>[<span class="string">'user'</span>];//获取cookie值</div><div class="line"></div><div class="line">//比如一个登陆成功跳转页面</div><div class="line"><span class="keyword">if</span>(!empty(<span class="variable">$_SESSION</span>[<span class="string">'user'</span>]))&#123;</div><div class="line">	//header函数输出自定义http头文件</div><div class="line">	//header(<span class="string">"Location: url"</span>);　指定当前页面跳转到url页面</div><div class="line">	header(<span class="string">"Location: index.html"</span>);</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">	header(<span class="string">"Location: login.html"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>三、密码加密算法</p>
+<ul>
+<li>md5()<br>1.可以将任意长度的字符串变成一个32位定长的字符串<br>2.md5()只能单向加密，不能通过加密后的字符串重新解密为原字符串<br>3.彩虹表，记录了大量的md5()结果，然后通过一定的算法，找到一个md5()结果相符的字符串<code>echo md5($password);</code></li>
+<li>sha1()<br><code>echo sha1($password);</code>它的结果是比<code>md5()</code>的字符串更长、复杂的字符串。</li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/zhouxiaona" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 zhouna<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
