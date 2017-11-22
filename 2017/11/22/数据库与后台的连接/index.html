@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="前端与后台的互动无非是前端需要后台的数据来生成自己需要的页面，前端做出的框架需要后台的数据来填充，在没学习数据库之前，我们把前台上交的数据经过.txt文件来记录，然后需要用的时候，再读取.txt文件，这个方法并非长久之计，接下来学习的数据库就为我们解决了这个难题。数据库无疑就是存储数据的地方，它们按">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="zhouna">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="数据库与后台的连接"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="web前端开发"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>数据库与后台的连接 - web前端开发</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="github">
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Welcome to Lala's blog!</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/zhouxiaona">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/about-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>数据库与后台的连接</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-11-22
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>前端与后台的互动无非是前端需要后台的数据来生成自己需要的页面，前端做出的框架需要后台的数据来填充，在没学习数据库之前，我们把前台上交的数据经过<code>.txt</code>文件来记录，然后需要用的时候，再读取<code>.txt</code>文件，这个方法并非长久之计，接下来学习的数据库就为我们解决了这个难题。<br>数据库无疑就是存储数据的地方，它们按照一定的规律存储在一起，让我们在需要的时候去获取，这才成为前后端的合作开发。下面是一个小栗子，一起来看如何从数据库获取数据并且向数据库添加数据。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>1.首先需要一个页面可以让用户添加菜单，即自定义菜的名字、价格、还有菜的照片。<br>2.上面的提交结果发送到php文件上，这个阶段需要把上传的菜的信息存储到数据库<code>menu</code>表中。<br>3.然后还需要一个页面生成菜单，即从<code>menu</code>表中获取全部的记录传送到桌面，并且设置菜单可选，以及菜单的份数可以输入。<br>4.把选中的菜单数据传送到<code>orders</code>表中保存。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//用户自定义菜单页面(addmenu.html)</div><div class="line">&lt;form action=<span class="string">"addmenu.php"</span> method=<span class="string">"post"</span> enctype=<span class="string">"multipart/form-data"</span>&gt;</div><div class="line">	菜名：&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"name"</span>&gt;&lt;/br&gt;</div><div class="line">	价格￥：&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"price"</span>&gt;&lt;/br&gt;</div><div class="line">	菜的照片：&lt;input <span class="built_in">type</span>=<span class="string">"file"</span> name=<span class="string">"pic"</span>&gt;&lt;/br&gt;</div><div class="line">	&lt;input <span class="built_in">type</span>=<span class="string">"submit"</span> name=<span class="string">"submit"</span> value=<span class="string">"上传菜单"</span>&gt;</div><div class="line">&lt;/form&gt;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">//接收自定义菜单数据并把数据保存在menu数据表中(addmenu.php)</div><div class="line"><span class="keyword">if</span>(!empty(<span class="variable">$_POST</span>[<span class="string">'submit'</span>]))&#123;</div><div class="line">	<span class="keyword">if</span>(!empty(<span class="variable">$_FILES</span>[<span class="string">'pic'</span>]))&#123;</div><div class="line">		<span class="keyword">if</span>(<span class="variable">$_FILES</span>[<span class="string">'pic'</span>][<span class="built_in">type</span>]==<span class="string">"image/jpeg"</span> ||<span class="variable">$_FILES</span>[<span class="string">'pic'</span>][<span class="built_in">type</span>]==<span class="string">"image/png"</span>)&#123;</div><div class="line">			<span class="variable">$result</span>=move_uploaded_file(<span class="variable">$_FILES</span>[<span class="string">'pic'</span>][<span class="string">'tmp_name'</span>],<span class="variable">$_FILES</span>[<span class="string">'pic'</span>][<span class="string">'name'</span>]);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(<span class="variable">$result</span>)&#123;</div><div class="line">			<span class="variable">$name</span>=htmlspecialchars(<span class="variable">$_POST</span>[<span class="string">'name'</span>]);</div><div class="line">			<span class="variable">$price</span>=floatval(<span class="variable">$_POST</span>[<span class="string">'price'</span>]);</div><div class="line">			<span class="variable">$pic</span>=<span class="variable">$_FILES</span>[<span class="string">'pic'</span>][<span class="string">'name'</span>];</div><div class="line">			//接下来就是打开数据库，添加数据，关闭数据库</div><div class="line">			<span class="variable">$link</span>=mysqli_connect(<span class="string">"localhost"</span>,<span class="string">"root"</span>,<span class="string">""</span>,<span class="string">"mydb"</span>);</div><div class="line">			//然后是数据库的连接错误处理</div><div class="line">			<span class="keyword">if</span>(mysqli_connect_errno(<span class="variable">$link</span>))&#123;</div><div class="line">				<span class="built_in">echo</span> <span class="string">"错误号："</span>.mysqli_connect_errno(<span class="variable">$link</span>);</div><div class="line">				<span class="built_in">echo</span> <span class="string">"&lt;/br&gt;错误描述：网站错误，请联系管理员"</span>.mysqli_connect_errno(<span class="variable">$link</span>);</div><div class="line">				<span class="built_in">exit</span>;</div><div class="line">			&#125;<span class="keyword">else</span>&#123;</div><div class="line">				//编码处理</div><div class="line">				mysqli_set_charset(<span class="variable">$link</span>,<span class="string">"utf8"</span>);</div><div class="line">			&#125;</div><div class="line">			<span class="variable">$sql</span>=<span class="string">"insert into menu (name,price,pic) values ('<span class="variable">$name</span>',<span class="variable">$price</span>,<span class="variable">$pic</span>);"</span>;</div><div class="line">			<span class="variable">$result</span>=mysqli_query(<span class="variable">$link</span>,<span class="variable">$sql</span>);</div><div class="line">			//关闭连接</div><div class="line">			mysqli_close(<span class="variable">$link</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后就是从<code>menu</code>数据表中获取全部的记录展示在前台页面上。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div></pre></td><td class="code"><pre><div class="line">//从数据库中获取全部的数据展示在前台页面上生成菜单(menulist.html)</div><div class="line">&lt;form action=<span class="string">"dingdan.php"</span> method=<span class="string">"post"</span>&gt;</div><div class="line">	&lt;div&gt;菜单&lt;/div&gt;</div><div class="line">	&lt;table border=<span class="string">"2"</span> cellpadding=<span class="string">"1"</span> cellspacing=<span class="string">"2"</span>&gt;</div><div class="line">		&lt;tr&gt;</div><div class="line">			&lt;th&gt;勾选框&lt;/th&gt;</div><div class="line">			&lt;th&gt;菜的照片&lt;/th&gt;</div><div class="line">			&lt;th&gt;菜名&lt;/th&gt;</div><div class="line">			&lt;th&gt;菜的单价&lt;/th&gt;</div><div class="line">			&lt;th&gt;菜的份数&lt;/th&gt;</div><div class="line">		&lt;/tr&gt;</div><div class="line">	&lt;/table&gt;</div><div class="line">	&lt;input <span class="built_in">type</span>=<span class="string">"submit"</span> name=<span class="string">"submit"</span> value=<span class="string">"立即订餐"</span>&gt;</div><div class="line">&lt;/form&gt;</div><div class="line">&lt;script src=<span class="string">"http://libs.baidu.com/jquery/2.0.0/jquery.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	$.ajax(&#123;</div><div class="line">		<span class="built_in">type</span>:<span class="string">"post"</span>,</div><div class="line">		url:<span class="string">"listmenu.php"</span>,</div><div class="line">		data:&#123;&#125;,</div><div class="line">		dataType:<span class="string">"json"</span>,</div><div class="line">		async:<span class="literal">true</span>,</div><div class="line">		success:<span class="keyword">function</span>(data)&#123;</div><div class="line">			<span class="keyword">for</span>(i <span class="keyword">in</span> data)&#123;</div><div class="line">				var tr=document.createElement(<span class="string">"tr"</span>);</div><div class="line">				tr.innerHTML=<span class="string">"&lt;td&gt;&lt;input type='checkbox' name='menu_id[]' value='"</span>+data[i][<span class="string">'Id'</span>]+<span class="string">"' /&gt;&lt;/td&gt;&lt;td&gt;&lt;img src='"</span>+data[i][<span class="string">'pic'</span>]+<span class="string">" alt='lala'&gt;&lt;/td&gt;&lt;td&gt;"</span>+data[i][<span class="string">'name'</span>]+<span class="string">"&lt;/td&gt;&lt;td&gt;￥"</span>+data[i][<span class="string">'price'</span>]+<span class="string">"&lt;/td&gt;&lt;td&gt;&lt;input type="</span>text<span class="string">" name='num_"</span>+data[i][<span class="string">'Id'</span>]+<span class="string">"' /&gt;&lt;/td&gt;"</span>;</div><div class="line">				$(<span class="string">"table"</span>)[0].appendChild(tr);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">//菜单页面的生成需要从menu数据表中读取数据(listmenu.php)</div><div class="line"><span class="variable">$link</span>=mysqli_connect(<span class="string">"localhost"</span>,<span class="string">"root"</span>,<span class="string">""</span>,<span class="string">"mydb"</span>);</div><div class="line"><span class="keyword">if</span>(mysqli_connect_errno(<span class="variable">$link</span>))&#123;</div><div class="line">	<span class="built_in">echo</span> <span class="string">"错误号："</span>.mysqli_connect_errno(<span class="variable">$link</span>);</div><div class="line">	<span class="built_in">echo</span> <span class="string">"&lt;/br&gt;错误编码：网站错误，请联系管理员"</span>.mysqli_connect_errno(<span class="variable">$link</span>);</div><div class="line">	<span class="built_in">exit</span>;</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">	mysqli_set_charset(<span class="variable">$link</span>,<span class="string">"utf8"</span>);</div><div class="line">&#125;</div><div class="line"><span class="variable">$sql</span>=<span class="string">"select * from menu"</span>;</div><div class="line"><span class="variable">$result</span>=mysqli_query(<span class="variable">$link</span>,<span class="variable">$sql</span>);</div><div class="line">//方法fetch_all返回结果集中所有的记录</div><div class="line">//MYSQLI_ASSOC关联数组下标 || MYSQLI_NUM数字下标 || MYSQLI_BOTH数字下标和关联数组下标</div><div class="line"><span class="variable">$data</span>=mysqli_fetch_all(<span class="variable">$result</span>,MYSQLI_ASSOC);</div><div class="line"><span class="built_in">echo</span> json_encode(<span class="variable">$data</span>);</div><div class="line">mysqli_close(<span class="variable">$link</span>);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">//菜单页面提交订单数据给(dingdan.php),并把数据存储在orderlist数据表中</div><div class="line"><span class="keyword">if</span>(!empty(<span class="variable">$_POST</span>[<span class="string">'submit'</span>]))&#123;</div><div class="line">	<span class="variable">$menu_id</span>=<span class="variable">$_POST</span>[<span class="string">'menu_id'</span>];</div><div class="line">	//打开数据库连接</div><div class="line">	<span class="variable">$link</span>=mysqli_connect(<span class="string">"localhost"</span>,<span class="string">"root"</span>,<span class="string">""</span>,<span class="string">"mydb"</span>);</div><div class="line">	<span class="keyword">if</span>(mysqli_connect_errno(<span class="variable">$link</span>))&#123;</div><div class="line">		<span class="built_in">echo</span> <span class="string">"错误号："</span>.mysqli_connect_errno(<span class="variable">$link</span>);</div><div class="line">		<span class="built_in">echo</span> <span class="string">"错误描述：网站错误，请联系管理员 "</span>.mysqli_connect_errno(<span class="variable">$link</span>);</div><div class="line">		<span class="built_in">exit</span>;</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		mysqli_set_charset(<span class="variable">$link</span>,<span class="string">"utf8"</span>);</div><div class="line">	&#125;</div><div class="line">	foreach(<span class="variable">$menu_id</span> as <span class="variable">$key</span> =&gt; <span class="variable">$val</span>)&#123;</div><div class="line">		<span class="variable">$menuid</span>=intval(<span class="variable">$val</span>);</div><div class="line">		<span class="variable">$amount</span>=intval(<span class="variable">$_POST</span>[<span class="string">'num_.$menuid'</span>]);</div><div class="line">		//根据传过来的id值先查出整条记录</div><div class="line">		<span class="variable">$sql</span>=<span class="string">"select name,price from menu where id="</span>.<span class="variable">$menuid</span>;</div><div class="line">		<span class="variable">$result</span>=mysqli_query(<span class="variable">$link</span>,<span class="variable">$sql</span>);</div><div class="line">		//此方法返回查找的记录结果，关联下标</div><div class="line">		<span class="variable">$row</span>=mysqli_fetch_assoc(<span class="variable">$result</span>);</div><div class="line"></div><div class="line">		<span class="variable">$fields</span>=array(</div><div class="line">			<span class="string">'name'</span>=&gt;<span class="variable">$row</span>[<span class="string">'name'</span>],</div><div class="line">			<span class="string">'price'</span>=&gt;<span class="variable">$row</span>[<span class="string">'price'</span>],</div><div class="line">			<span class="string">'amount'</span>=&gt;<span class="variable">$amount</span>,</div><div class="line">			<span class="string">'createDate'</span>=&gt;date(<span class="string">"Y-m-d  H:i:s"</span>);</div><div class="line">		);</div><div class="line">		//定义一个函数用来插入数据记录</div><div class="line">		<span class="keyword">function</span> insert(<span class="variable">$link</span>,<span class="variable">$fields</span>,<span class="variable">$table</span>)&#123;</div><div class="line">			<span class="variable">$sql</span>=<span class="string">"insert into "</span>;</div><div class="line">			<span class="variable">$sql</span>.=<span class="variable">$table</span>.<span class="string">" set "</span>;</div><div class="line">			<span class="variable">$string</span>=<span class="string">""</span>;</div><div class="line">			foreach(<span class="variable">$fields</span> as <span class="variable">$key</span> =&gt; <span class="variable">$val</span>)&#123;</div><div class="line">				<span class="variable">$string</span>.=<span class="variable">$key</span>.<span class="string">"="</span>.<span class="variable">$val</span>.<span class="string">","</span>;</div><div class="line">			&#125;</div><div class="line">			<span class="variable">$string</span>=trim(<span class="variable">$string</span>,<span class="string">","</span>);</div><div class="line">			<span class="variable">$sql</span>.=<span class="variable">$string</span>;</div><div class="line">			mysqli_query(<span class="variable">$link</span>,<span class="variable">$sql</span>);</div><div class="line">		&#125;</div><div class="line">		//然后调用该函数</div><div class="line">		insert(<span class="variable">$link</span>,<span class="variable">$fields</span>,<span class="string">"orderlist"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//最终的结果就是在orderlist数据表中可以看到订餐数据记录。</div></pre></td></tr></table></figure></p>
+<p>🤡🤡🤡🤡</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/zhouxiaona" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 zhouna<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
