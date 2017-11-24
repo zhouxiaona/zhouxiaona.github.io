@@ -10,6 +10,10 @@
 
     <!--Description-->
     
+        <meta name="description" content="在很多前端页面中有一个功能就是新闻页面的下拉到页面底部不断刷新新的数据,今天就来好好分享这段代码.
+思路:有一个前台页面和一个后台数据库,每次用户滑动到页面底部,开始向后台发送数据请求,不断刷新前端的内容.所以前端页面设置如下:
+1. ul标签里就是每次刷新页面向此标签里添加新闻条目,一开始的页面是">
+    
 
     <!--Author-->
     
@@ -18,7 +22,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="web前端开发"/>
+        <meta property="og:title" content="滚动加载"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>page - 归档：2017 - web前端开发</title>
+    <title>滚动加载 - web前端开发</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -144,90 +148,62 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/about-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2017</h1>
+                <div class="post-heading">
+                    <h1>滚动加载</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-11-23
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2017/09/13/渐变and倒影and遮罩层mask/">
-        <h1 class="post-title archive">
-            渐变and倒影and遮罩层mask
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-09-13
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>在很多前端页面中有一个功能就是新闻页面的下拉到页面底部不断刷新新的数据,今天就来好好分享这段代码.</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路:"></a>思路:</h2><h4 id="有一个前台页面和一个后台数据库-每次用户滑动到页面底部-开始向后台发送数据请求-不断刷新前端的内容"><a href="#有一个前台页面和一个后台数据库-每次用户滑动到页面底部-开始向后台发送数据请求-不断刷新前端的内容" class="headerlink" title="有一个前台页面和一个后台数据库,每次用户滑动到页面底部,开始向后台发送数据请求,不断刷新前端的内容."></a>有一个前台页面和一个后台数据库,每次用户滑动到页面底部,开始向后台发送数据请求,不断刷新前端的内容.</h4><p>所以前端页面设置如下:<br><img src="http://upload-images.jianshu.io/upload_images/7432522-6e4356f740c2fb6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="前端设置"></p>
+<h4 id="1-ul标签里就是每次刷新页面向此标签里添加新闻条目-一开始的页面是没有的-所以需要向后台请求数据"><a href="#1-ul标签里就是每次刷新页面向此标签里添加新闻条目-一开始的页面是没有的-所以需要向后台请求数据" class="headerlink" title="1. ul标签里就是每次刷新页面向此标签里添加新闻条目,一开始的页面是没有的,所以需要向后台请求数据."></a>1. <code>ul</code>标签里就是每次刷新页面向此标签里添加新闻条目,一开始的页面是没有的,所以需要向后台请求数据.</h4><h4 id="2-页面加载完毕之后-判断页面有没有新闻条目-如果没有-此时请求数据-生成新闻条-充满页面-判断浏览器的高度"><a href="#2-页面加载完毕之后-判断页面有没有新闻条目-如果没有-此时请求数据-生成新闻条-充满页面-判断浏览器的高度" class="headerlink" title="2. 页面加载完毕之后,判断页面有没有新闻条目,如果没有,此时请求数据,生成新闻条,充满页面.判断浏览器的高度"></a>2. 页面加载完毕之后,判断页面有没有新闻条目,如果没有,此时请求数据,生成新闻条,充满页面.判断浏览器的高度</h4><p><img src="http://upload-images.jianshu.io/upload_images/7432522-7f41f809750ad061.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="详情图"></p>
+<h4 id="3-所以当body被内容撑开的高度减去浏览器的高度与scrollTop值相等的话-就表示鼠标滑到了页面底部-此时请求数据"><a href="#3-所以当body被内容撑开的高度减去浏览器的高度与scrollTop值相等的话-就表示鼠标滑到了页面底部-此时请求数据" class="headerlink" title="3. 所以当body被内容撑开的高度减去浏览器的高度与scrollTop值相等的话,就表示鼠标滑到了页面底部,此时请求数据"></a>3. 所以当body被内容撑开的高度减去浏览器的高度与<code>scrollTop</code>值相等的话,就表示鼠标滑到了页面底部,此时请求数据</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">  //js代码</div><div class="line">  window.onscroll=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">      var windowHeight=document.documentElement.clientHeight;</div><div class="line"></div><div class="line">      var bodyHeight=document.documentElement.offsetHeight;</div><div class="line"></div><div class="line">      var scrollHeight=bodyHeight-windowHeight;</div><div class="line"></div><div class="line">      var scrollTop=document.body.scrollTop || document.documentElement.scrollTop;</div><div class="line"></div><div class="line">      <span class="keyword">if</span>(scrollTop==scrollHeight)&#123;</div><div class="line">          //触发的事件</div><div class="line">        &#125;</div><div class="line">&#125;</div><div class="line">兼容各种浏览器的写法获取浏览器的宽和高:(不包括工具栏/滚动条)</div><div class="line">var w=window.innerWidth || document.documentElement.clientWidth ||  document.body.clientWidth;</div><div class="line"></div><div class="line">var h=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;</div></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2017/09/13/3D变换/">
-        <h1 class="post-title archive">
-            3D变换
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-09-13
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2017/09/11/flex弹性初识/">
-        <h1 class="post-title archive">
-            flex弹性初识
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-09-11
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2017/09/11/hello-world/">
-        <h1 class="post-title archive">
-            Hello World
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-09-11
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-        <li class="previous"><a href="/archives/2017/page/2/">&larr;  下一页</a></li>
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
