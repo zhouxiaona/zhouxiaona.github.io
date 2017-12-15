@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="懒加载懒加载就是判断图片是否出现在浏览器的可视窗口内，如果出现在该区域，就请求此图片。需要的参数
+
+窗口的scrollTop和窗口的高度height
+12345678//窗口的scrollTop值var scrollTop=document.body.scrollTop || document.do">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="zhouna">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="预加载和懒加载"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="web前端开发"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>预加载和懒加载 - web前端开发</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="github">
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Welcome to Lala's blog!</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/zhouxiaona">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/about-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>预加载和懒加载</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-12-15
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h2><p>懒加载就是判断图片是否出现在浏览器的可视窗口内，如果出现在该区域，就请求此图片。<br><code>需要的参数</code></p>
+<ul>
+<li><p>窗口的<code>scrollTop</code>和窗口的高度<code>height</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//窗口的scrollTop值</div><div class="line">var scrollTop=document.body.scrollTop || document.documentElement.scrollTop;</div><div class="line">或者</div><div class="line">var scrollTop=$(window).scrollTop();</div><div class="line">//窗口的高度</div><div class="line">var height=document.body.offsetHeight || document.documentElement.offsetHeight;</div><div class="line">或者</div><div class="line">var height=$(window).height();</div></pre></td></tr></table></figure>
+</li>
+<li><p>图片距离整个网页顶部的距离<code>offsetTop</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var imgTop=img.offsetTop;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>所需要的参数都计算好以后，就判断，元素是否出现在浏览器的可视窗口内。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(var i=0;i&lt;14;i++)&#123;</div><div class="line">	var li=document.createElement(<span class="string">"li"</span>);</div><div class="line">	li.innerHTML=`&lt;a href=<span class="string">"###"</span>&gt;</div><div class="line">					&lt;img src=<span class="string">""</span> alt=<span class="string">""</span> src_data=<span class="string">"./img/14.jpg"</span>/&gt;</div><div class="line">				  &lt;/a&gt;`;</div><div class="line">	$(<span class="string">"ul"</span>).append(li);</div><div class="line">&#125;</div><div class="line">//图片开始请求的函数</div><div class="line"><span class="keyword">function</span> loadImg(scrollTop,height)&#123;</div><div class="line">	var lis=$(<span class="string">"ul li"</span>);</div><div class="line">	<span class="keyword">for</span>(var i=0;i&lt;lis.length;i++)&#123;</div><div class="line">		<span class="keyword">if</span>(lis[i].offsetTop&lt;(scrollTop+height))&#123;</div><div class="line">			var src=$(lis[i]).children(<span class="string">"a"</span>).children(<span class="string">"img"</span>).attr(<span class="string">"src_data"</span>);</div><div class="line">			$(lis[i]).children(<span class="string">"a"</span>).children(<span class="string">"img"</span>).attr(<span class="string">"src"</span>,src);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">window.onload=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	var scrollTop=$(window).scrollTop();</div><div class="line">	var height=$(window).height();</div><div class="line">	loadImg(scrollTop,height);</div><div class="line">&#125;</div><div class="line">window.onscroll=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	var scrollTop=$(window).scrollTop();</div><div class="line">	var height=$(window).height();</div><div class="line">	loadImg(scrollTop,height);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>结果如下图：<br><img src="http://upload-images.jianshu.io/upload_images/7432522-dcfcf5fae896c815.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="b.gif"></p>
+<h2 id="预加载"><a href="#预加载" class="headerlink" title="预加载"></a>预加载</h2><p>在图片墙中，我们会把相同宽度，不同高度的图片放在一起，但是图片需要请求，没请求成功之前，我们获取不到它的高度，所以需要图片预加载。</p>
+<ul>
+<li>代码：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line">html代码为：</div><div class="line">&lt;style&gt;</div><div class="line">	*&#123;</div><div class="line">		margin:0;</div><div class="line">		padding:0;</div><div class="line">	&#125;</div><div class="line">	.box&#123;</div><div class="line">		min-width:280px;</div><div class="line">		position: relative;</div><div class="line">		margin:0 auto;</div><div class="line">	&#125;</div><div class="line">	.box img&#123;</div><div class="line">		width:270px;</div><div class="line">		position:absolute;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&lt;/style&gt;</div><div class="line">&lt;div class=<span class="string">"box"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;script src=<span class="string">"http://libs.baidu.com/jquery/2.0.0/jquery.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	var width=270;</div><div class="line">	var margin=10;</div><div class="line">	//图片进行预加载</div><div class="line">	var count=0;</div><div class="line">	var imgArr=[];</div><div class="line">	<span class="keyword">for</span>(var i=0;i&lt;14;i++)&#123;</div><div class="line">		var readyImg=new Image();</div><div class="line">		readyImg.src=<span class="string">"./img/"</span>+(i+1)+<span class="string">".jpg"</span>;</div><div class="line">		imgArr.push(readyImg);</div><div class="line">		imgArr.onload=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">			count++;</div><div class="line">			<span class="keyword">if</span>(count==14)&#123;</div><div class="line">				start();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	//图片的生成</div><div class="line">	var isF=<span class="literal">true</span>;</div><div class="line">	var topArr=[];</div><div class="line">	<span class="keyword">function</span> <span class="function"><span class="title">start</span></span>()&#123;</div><div class="line">		var cols=parseInt($(window).width()/(width+margin));</div><div class="line">		<span class="keyword">if</span>(topArr.length==cols &amp;&amp; cols!=0)&#123;</div><div class="line">			<span class="built_in">return</span>;</div><div class="line">		&#125;</div><div class="line">		topArr.length=cols==0?1:cols;</div><div class="line">		$(<span class="string">".box"</span>).width(cols*(margin+width));</div><div class="line">		<span class="keyword">for</span>(var i=0;i&lt;topArr.length;i++)&#123;</div><div class="line">			topArr[i]=0;</div><div class="line">		&#125;</div><div class="line">		//生成图片</div><div class="line">		<span class="keyword">for</span>(var j=0;j&lt;14;j++)&#123;</div><div class="line">			var img=imgArr[j];</div><div class="line">			var minIndex=0;</div><div class="line">			<span class="keyword">for</span>(var a=1;a&lt;topArr.length;a++)&#123;</div><div class="line">				<span class="keyword">if</span>(topArr[a]&lt;topArr[minIndex])&#123;</div><div class="line">					minIndex=a;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			img.style.top=topArr[minIndex]+margin+<span class="string">'px'</span>;</div><div class="line">			img.style.left=minIndex*(margin+width)+<span class="string">'px'</span>;</div><div class="line">			<span class="keyword">if</span>(isF)&#123;</div><div class="line">				$(<span class="string">".box"</span>).append(img);</div><div class="line">			&#125;</div><div class="line">			topArr[minIndex]+=img.offsetHeight+margin;</div><div class="line">		&#125;</div><div class="line">		isF=<span class="literal">false</span>;</div><div class="line">	&#125;</div><div class="line">	//改变窗口大小时</div><div class="line">	window.onresize=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">		start();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>结果如下图：<br><img src="http://upload-images.jianshu.io/upload_images/7432522-6414a0728335c9fe.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="c.gif"></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/zhouxiaona" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 zhouna<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
