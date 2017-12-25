@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="canvas标签
+canvas是html5新增标签，意为画布。
+属性：widthandheight,canvas标签可以直接在标签上添加画布的宽和高，也可以在内部样式表中添加，不过这样会把画布拉伸。
+canvas有默认的大小为300px and 150px。
+canvas的背景色是透明色。
+canv">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="zhouna">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="canvas基础"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="web前端开发"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>canvas基础 - web前端开发</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="github">
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Welcome to Lala's blog!</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/zhouxiaona">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/about-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>canvas基础</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-12-25
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="canvas标签"><a href="#canvas标签" class="headerlink" title="canvas标签"></a><code>canvas</code>标签</h2><ul>
+<li><code>canvas</code>是<code>html5</code>新增标签，意为画布。</li>
+<li>属性：<code>width</code>and<code>height</code>,<code>canvas</code>标签可以直接在标签上添加画布的宽和高，也可以在内部样式表中添加，不过这样会把画布拉伸。</li>
+<li><code>canvas</code>有默认的大小为<code>300px and 150px</code>。</li>
+<li><code>canvas</code>的背景色是透明色。</li>
+<li><code>canvas</code>画布坐标无限大，当前只是可是窗口。<br><img src="http://upload-images.jianshu.io/upload_images/7432522-85990994d76c18ea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1133C944-FA5F-458A-8A41-20A812C83472.png"><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">//首先获取`canvas`节点</div><div class="line">var mycanvas=document.getElementById(<span class="string">"mycanvas"</span>);</div><div class="line">//获取`canvas`画布的上下文</div><div class="line">var ctx=mycanvas.getContext(<span class="string">"2d"</span>);</div><div class="line">//新建一个路径（图层）</div><div class="line">ctx.beginPath();</div><div class="line">//画笔的起始点坐标</div><div class="line">ctx.moveTo(10,10);</div><div class="line">//画笔的终点坐标</div><div class="line">ctx.lineTo(100,100);</div><div class="line">//对所画线条进行设置线条颜色</div><div class="line">ctx.strokeStyle=<span class="string">"red"</span>;</div><div class="line">//还能设置线宽</div><div class="line">ctx.lineWidth=30;</div><div class="line">//对所画的线条进行渲染</div><div class="line">ctx.stroke();</div><div class="line">//`当你画的是一个闭合图形时可以填充颜色`</div><div class="line">ctx.fillStyle=<span class="string">"lightgray"</span>;</div><div class="line">ctx.fill();</div><div class="line">//但你花了三个点坐标，需要把这些点闭合时，使用</div><div class="line">ctx.closePath();</div><div class="line">//为画布设置透明色(0--1之间的小数),单独线条的颜色可以用`rgba()`单独设置</div><div class="line">ctx.globalAlpha=0.5;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="画直线"><a href="#画直线" class="headerlink" title="画直线"></a>画直线</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ctx.beginPath();</div><div class="line">ctx.moveTo(50,10);</div><div class="line">ctx.lineTo(50,100);</div><div class="line">ctx.lineWidth=10;</div><div class="line">ctx.stroke();</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/7432522-9e739dea8a4d498d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-12-25 下午8.23.21.png"></p>
+<h2 id="画矩形"><a href="#画矩形" class="headerlink" title="画矩形"></a>画矩形</h2><ul>
+<li>画矩形有三种方式<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//`方法一`</div><div class="line">ctx.beginPath();</div><div class="line">// `四个参数分别是：开始的坐标，后两个是要画矩形的长和宽`</div><div class="line">ctx.fillRect(10,10,100,50);</div><div class="line"></div><div class="line">//`方法二`</div><div class="line">ctx.beginPath();</div><div class="line"></div><div class="line">ctx.strokeRect(20,20,100,50);</div><div class="line">//`方法三`</div><div class="line">ctx.beginPath();</div><div class="line">ctx.rect(30,30 100,50);</div><div class="line">ctx.stroke();//到此效果与方法二相同</div><div class="line">ctx.fill();//到此效果与方法一相同</div><div class="line"></div><div class="line">//`方法四`</div><div class="line">ctx.beginPath();</div><div class="line">ctx.moveTo(0,0);</div><div class="line">ctx.lineTo(0,100);</div><div class="line">ctx.lineTo(100,100);</div><div class="line">ctx.lineTo(100,0);</div><div class="line">ctx.closePath();</div><div class="line">ctx.stroke();//到此效果与方法二相同</div><div class="line">ctx.fill();//到此效果与方法一相同</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="画圆"><a href="#画圆" class="headerlink" title="画圆"></a>画圆</h2><ul>
+<li>画圆涉及到<code>arc(圆心的坐标,半径,开始的角度,结束的角度,逆时针和顺时针（可选）)</code></li>
+<li><p><code>true逆时针</code>，<code>false顺时针（默认）</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//开始画圆</div><div class="line">ctx.beginPath();</div><div class="line">ctx.arc(100,100,100,0,Math.PI*2);</div><div class="line">ctx.stroke();//或者默认颜色填充</div><div class="line">ctx.fill();</div></pre></td></tr></table></figure>
+</li>
+<li><p>关于圆的坐标：<br><img src="http://upload-images.jianshu.io/upload_images/7432522-2d1e5777821ec0b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-12-25 下午8.41.15.png"></p>
+<h3 id="线性渐变与径向渐变"><a href="#线性渐变与径向渐变" class="headerlink" title="线性渐变与径向渐变"></a>线性渐变与径向渐变</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//线性渐变</div><div class="line">//四个参数：开始横向渐变开始的坐标，结束横向渐变的坐标</div><div class="line">var grd=ctx.createLinearGradient(0,0,mycanvas.width,mycanvas.height);</div><div class="line">//`addColorStop(<span class="string">"渐变总距离的百分比"</span>,颜色);`</div><div class="line">grd.addColorStop(0,<span class="string">"red"</span>);</div><div class="line">grd.addColorStop(0.5,<span class="string">"blue"</span>);</div><div class="line">grd.addColorStop(1,<span class="string">"pink"</span>);</div><div class="line">//例如一个矩形填充上面的颜色,效果如下：</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7432522-08320adb35b62e87.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-12-25 下午8.50.38.png"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//径向渐变</div><div class="line">//参数：径向渐变圆心坐标和半径</div><div class="line">var grd=ctx.createRadialGradient(200,200,100,200,200,250);</div><div class="line">grd.addColorStop(0,<span class="string">"blue"</span>);</div><div class="line">grd.addColorStop(0.5,<span class="string">"yellow"</span>);</div><div class="line">grd.addColorStop(1,<span class="string">"red"</span>);</div><div class="line">ctx.fillStyle=grd;</div><div class="line">ctx.fillRect(0,0,mycanvas.width,mycanvas.height);</div><div class="line">//效果如下：</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7432522-afdaec4c440f66fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-12-25 下午8.55.56.png"></p>
+<h3 id="判断指定点是否在上下文图形上的方法isPointInPath-点的坐标"><a href="#判断指定点是否在上下文图形上的方法isPointInPath-点的坐标" class="headerlink" title="判断指定点是否在上下文图形上的方法isPointInPath(点的坐标)"></a>判断指定点是否在上下文图形上的方法<code>isPointInPath(点的坐标)</code></h3><ul>
+<li><code>创建矩形的方法中，方法一和方法二画的矩形不能用此方法判断</code><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(isPointInPath(10,10))&#123;</div><div class="line">	console.log(<span class="string">"在此图形内"</span>);</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">	console.log(<span class="string">"不在图形内"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="文字设置"><a href="#文字设置" class="headerlink" title="文字设置"></a>文字设置</h2><ul>
+<li>文字也可以设置颜色和渐变<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//文字可以设置上下基准线</div><div class="line">ctx.textBaseline=<span class="string">"middle"</span>;</div><div class="line">//文字可以设置左右基准线</div><div class="line">ctx.textAlign=<span class="string">"center"</span>;</div><div class="line">//可以设置文字的基本样式</div><div class="line">ctx.font=<span class="string">"20px bold Arial"</span>;</div><div class="line">var grd=ctx.createLinearGradient(0,0,100,100);</div><div class="line">grd.addColorStop(0,<span class="string">"blue"</span>);</div><div class="line">grd.addColorStop(0.5,<span class="string">"pink"</span>);</div><div class="line">grd.addColorStop(1,<span class="string">"red"</span>);</div><div class="line">ctx.fillStyle=grd;</div><div class="line">//参数：文字内容，左下角的基线坐标</div><div class="line">ctx.fillText(<span class="string">"hello"</span>,100,100);//或者</div><div class="line">ctx.strokeText(<span class="string">"hello"</span>,100,100);</div><div class="line">//效果如下：</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7432522-6eefbd3bf70a1f8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-12-25 下午9.15.41.png"></p>
+<h2 id="拓展小练习"><a href="#拓展小练习" class="headerlink" title="拓展小练习"></a>拓展小练习</h2><h3 id="画象棋棋盘"><a href="#画象棋棋盘" class="headerlink" title="画象棋棋盘"></a>画象棋棋盘</h3><ul>
+<li>画8行8列的黑白格，宽高50px<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ctx.beginPath();</div><div class="line"><span class="keyword">for</span>(var i=0;i&lt;8;i+=2)&#123;</div><div class="line">	<span class="keyword">for</span>(var j=0;j&lt;8;j+=2)&#123;</div><div class="line">		ctx.fillStyle=<span class="string">"black"</span>;</div><div class="line">		ctx.fillRect(i*50,j*50,50,50);</div><div class="line">		ctx.fillRect(i*50+50,j*50+50,50,50);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">//效果如图：</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7432522-2e6c2ec2e4b020ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-12-25 下午9.21.42.png"></p>
+<h3 id="写字板"><a href="#写字板" class="headerlink" title="写字板"></a>写字板</h3><ul>
+<li>鼠标按下的同时鼠标移动画出移动线条，鼠标抬起，事件消失<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">mycanvas.onmousedown=<span class="keyword">function</span>(e)&#123;</div><div class="line">	var evObj=window.event || e;</div><div class="line">	ctx.beginPath();</div><div class="line">	var x=evObj.clientX-mycanvas.offsetLeft;</div><div class="line">	var y=evObj.clientY-mycanvas.offsetTop;</div><div class="line">	ctx.moveTo(x,y);</div><div class="line">	mycanvas.onmousemove=<span class="keyword">function</span>(e)&#123;</div><div class="line">		var evObj=e.window.event || e;</div><div class="line">		var x1=evObj.clientX-mycanvas.offsetLeft;</div><div class="line">		var y1=evObj.clientY-mycanvas.offsetTop;</div><div class="line">		ctx.lineTo(x1,y1);</div><div class="line">		ctx.stroke=<span class="string">"blue"</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">document.onmouseup=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	mycanvas.onmousemove=null;</div><div class="line">&#125;</div><div class="line">//效果如下：</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7432522-7edf34672d53bcc8.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="01.gif"></p>
+<h3 id="太极图"><a href="#太极图" class="headerlink" title="太极图"></a>太极图</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">ctx.beginPath();</div><div class="line">ctx.arc(100,100,100,Math.PI/2,Math.PI*1.5);</div><div class="line">ctx.fillStyle=<span class="string">"black"</span>;</div><div class="line">ctx.fill();</div><div class="line"></div><div class="line">ctx.beginPath();</div><div class="line">ctx.arc(100,100,100,Math.PI/2,Math.PI*1.5,<span class="literal">true</span>);</div><div class="line">ctx.fillStyle=<span class="string">"white"</span>;</div><div class="line">ctx.fill();</div><div class="line"></div><div class="line">ctx.beginPath();</div><div class="line">ctx.arc(100,50,50,0,Math.PI*2);</div><div class="line">ctx.fillStyle=<span class="string">"black"</span>;</div><div class="line">ctx.fill();</div><div class="line"></div><div class="line">ctx.beginPath();</div><div class="line">ctx.arc(100,150,50,0,Math.PI*2);</div><div class="line">ctx.fillStyle=<span class="string">"white"</span>;</div><div class="line">ctx.fill();</div><div class="line"></div><div class="line">ctx.beginPath();</div><div class="line">ctx.arc(100,50,15,0,Math.PI*2);</div><div class="line">ctx.fillStyle=<span class="string">"white"</span>;</div><div class="line">ctx.fill();</div><div class="line"></div><div class="line">ctx.beginPath();</div><div class="line">ctx.arc(100,150,15,0,Math.PI*2);</div><div class="line">ctx.fillStyle=<span class="string">"black"</span>;</div><div class="line">ctx.fill();</div><div class="line">//效果如下</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/7432522-3726bf1339297359.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-12-25 下午9.41.33.png"></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/zhouxiaona" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 zhouna<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
