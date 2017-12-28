@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="canvas画图片
+ctx.drawImage(图片对象,x,y);三个参数：图片对象，开始绘制图片的坐标（即从图片的何位置开始绘制）
+ctx.drawImage(图片对象,x,y,width,height);五个参数：后两个参数是所绘画的图片在画布中的宽和高
+ctx.drawImage(图片对象,">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="zhouna">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="canvas进阶2"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="web前端开发"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>canvas进阶2 - web前端开发</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="github">
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Welcome to Lala's blog!</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/zhouxiaona">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/about-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>canvas进阶2</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-12-27
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="canvas画图片"><a href="#canvas画图片" class="headerlink" title="canvas画图片"></a>canvas画图片</h2><ul>
+<li><code>ctx.drawImage(图片对象,x,y);</code><br>三个参数：图片对象，开始绘制图片的坐标（即从图片的何位置开始绘制）</li>
+<li><code>ctx.drawImage(图片对象,x,y,width,height);</code><br>五个参数：后两个参数是所绘画的图片在画布中的宽和高</li>
+<li><code>ctx.drawImage(图片对象,x,y,width,height,x1,y1,width1,height1);</code><br>九个参数：后四个参数分别为所绘图片在画布中开始绘画的位置坐标和在画布中的宽和高。</li>
+<li><code>因为图片、视频等属于资源数据，加载需要一定的时间，所以需要预加载。</code><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var img=new Image();</div><div class="line">img.src=<span class="string">"path./src.png"</span>;</div><div class="line">img.onload=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	ctx.drawImage(img,0,0,100,100,10,10,100,100);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7432522-f8fda22acca10edf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-12-27 下午9.22.22.png"></p>
+<h3 id="getImageData-0-0-500-500-获取图片像素点"><a href="#getImageData-0-0-500-500-获取图片像素点" class="headerlink" title="getImageData(0,0,500,500);获取图片像素点"></a><code>getImageData(0,0,500,500);</code>获取图片像素点</h3><ul>
+<li>四个参数分别为：开始获取像素点的坐标，获取范围的宽和高<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var img=new Image();</div><div class="line">img.src=<span class="string">"path./src.png"</span>;</div><div class="line">img.onload=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	ctx.drawImage(img,0,0,100,100,0,0,500,500);</div><div class="line">	var imageData=ctx.getImageData(0,0,500,500);</div><div class="line">	console.log(imageData);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="imageData"><a href="#imageData" class="headerlink" title="imageData"></a>imageData</h4><ul>
+<li>可以打印看看里面的数据形式</li>
+<li>所得到的imageData是一个对象，分别为：data数组、所获取像素点的宽度、所获取像素点的高度</li>
+<li>所获取到的imageData是所有的<code>rgba(r,g,b,a)</code>的四个参数，4个为一组</li>
+<li>所以遍历<code>imageData.data</code>数组，可以得到所有的像素点。</li>
+<li>利用对像素点的处理，可以改变整个图片的色调，进而对图片进行简单的色调处理。<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var img=new Image();</div><div class="line">img.src=<span class="string">"path./src.png"</span>;</div><div class="line">img.onload=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	ctx.drawImage(img,0,0,100,100,0,0,500,500);</div><div class="line">	var imageData=ctx.getImageData(0,0,500,500);</div><div class="line">	console.log(imageData);</div><div class="line">	<span class="keyword">for</span>(var i=0;i&lt;imageData.data.length;i+=4)&#123;</div><div class="line">		var r=imageData.data[i];</div><div class="line">		var g=imageData.data[i+1];</div><div class="line">		var b=imageData.data[i+2];</div><div class="line">		var a=imageData.data[i+3];//透明度</div><div class="line">	&#125;</div><div class="line">	var gray=(r+g+b)/3;</div><div class="line">	imageData.data[i]=gray;</div><div class="line">	imageData.data[i+1]=gray;</div><div class="line">	imageData.data[i+2]=gray;</div><div class="line">&#125;</div><div class="line">//再把变之后的颜色重新赋值给imageData对象</div><div class="line">ctx.putImageData(imageData,100,100);//后两个参数为要给颜色的位置,（画布中的坐标），还可以利用这个属性对图像进行反色处理,如下图所示.</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7432522-8fbedb51574e7fa0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-12-28 下午7.07.29.png"></p>
+<h2 id="bezier曲线"><a href="#bezier曲线" class="headerlink" title="bezier曲线"></a>bezier曲线</h2><ul>
+<li>二次贝塞尔曲线<code>ctx.quadraticCurveTo(500,0,500,500);</code>画贝塞尔曲线包括画一个起始点，即<code>ctx.moveTo(0,0);</code>函数里面的两个坐标分别为控制点的坐标和结束点的坐标。</li>
+<li>三次贝塞尔曲线<code>ctx.bezierCurveTo(500,0,0,500,500,500);</code>跟二次贝塞尔曲线一样，只不过多了一对控制点，可以画更丰富的曲线。它也同样需要一个开始点。<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ctx.beginPath();</div><div class="line">ctx.moveTo(0,0);</div><div class="line">ctx.quadraticCurveTo(500,0,500,500);</div><div class="line">ctx.stroke();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7432522-7f3e28a343a19e8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-12-28 下午7.20.41.png"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ctx.beginPath();</div><div class="line">ctx.moveTo(0,0);</div><div class="line">ctx.bezierCurveTo(500,0,0,500,500,500);</div><div class="line">ctx.stroke();</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7432522-0ccbe60bfc98f4f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-12-28 下午7.21.13.png"></p>
+<h3 id="小栗子🎩🎩🎩"><a href="#小栗子🎩🎩🎩" class="headerlink" title="小栗子🎩🎩🎩"></a>小栗子🎩🎩🎩</h3><h4 id="动态贝塞尔曲线动画"><a href="#动态贝塞尔曲线动画" class="headerlink" title="动态贝塞尔曲线动画"></a><code>动态贝塞尔曲线动画</code></h4><ul>
+<li>实现这个效果有两种方法可以判断鼠标的点在红球上还是蓝球上，一是计算鼠标落下的点距离小球圆心的距离，第二种方法就是下面所演示的利用<code>ctx.isPointInPath(x,y);</code>来判断某一点是否在当前画布中，此方法只能判断当前画布的点，所以把红球和蓝色球分开画，分开判断就行了。<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> draw(x1,y1,x2,y2)&#123;</div><div class="line">	//画灰色虚线</div><div class="line">	ctx.beginPath();</div><div class="line">	ctx.moveTo(0,500);</div><div class="line">	ctx.lineTo(500,0);</div><div class="line">	ctx.lineWidth=15;</div><div class="line">	ctx.strokeStyle=<span class="string">"lightgray"</span>;</div><div class="line">	ctx.stroke();</div><div class="line">	//画黑色实线</div><div class="line">	ctx.beginPath();</div><div class="line">	ctx.moveTo(500,0);</div><div class="line">	ctx.bezierCurveTo(x1,y1,x2,y2,0,500);</div><div class="line">	ctx.lineWidth=15;</div><div class="line">	ctx.strokeStyle=<span class="string">"black"</span>;</div><div class="line">	ctx.stroke();</div><div class="line">	//画两条细黑线</div><div class="line">	ctx.beginPath();</div><div class="line">	ctx.moveTo(0,500);</div><div class="line">	ctx.lineTo(x1,y1);</div><div class="line">	ctx.lineWidth=5;</div><div class="line">	ctx.stroke();</div><div class="line">	</div><div class="line">	ctx.beginPath();</div><div class="line">	ctx.moveTo(500,0);</div><div class="line">	ctx.lineTo(x2,y2);</div><div class="line">	ctx.lineWidth=5;</div><div class="line">	ctx.stroke();</div><div class="line">&#125;</div><div class="line">//画红球的方法</div><div class="line"><span class="keyword">function</span> redBall(x1,y1)&#123;</div><div class="line">	ctx.beginPath();</div><div class="line">	ctx.fillStyle=<span class="string">"pink"</span>;</div><div class="line">	ctx.arc(x1,y1,10,0,Math.PI*2);</div><div class="line">	ctx.fill();</div><div class="line">&#125;</div><div class="line">//画蓝球的方法</div><div class="line"><span class="keyword">function</span> blueBall(x2,y2)&#123;</div><div class="line">	ctx.beginPath();</div><div class="line">	ctx.fillStyle=<span class="string">"blue"</span>;</div><div class="line">	ctx.arc(x2,y2,10,0,Math.PI*2);</div><div class="line">	ctx.fill();</div><div class="line">&#125;</div><div class="line"></div><div class="line">//初始化</div><div class="line">var x1=100;</div><div class="line">var y1=100;</div><div class="line">var x2=400;</div><div class="line">var y2=400;</div><div class="line">draw(x1,y1,x2,y2);</div><div class="line">redBall(x1,y1);</div><div class="line">blueBall(x2,y2);</div><div class="line"></div><div class="line">mycanvas.onmousedown=<span class="keyword">function</span>(e)&#123;</div><div class="line">	var ev=e || window.event;</div><div class="line">	var xx=ev.clientX-mycanvas.offsetLeft;</div><div class="line">	var yy=ev.clientY-mycanvas.offsetTop;</div><div class="line">	</div><div class="line">	redBall(x1,y1);</div><div class="line">	//判断鼠标落下的点在不在红球内</div><div class="line">	<span class="keyword">if</span>(ctx.isPointInPath(xx,yy))&#123;</div><div class="line">		console.log(<span class="string">"在红球中"</span>);</div><div class="line">		mycanvas.onmousemove=<span class="keyword">function</span>(e)&#123;</div><div class="line">			var ev=e || window.event;</div><div class="line">			var xx1=ev.clientX-mycanvas.offsetLeft;</div><div class="line">			var yy1=ev.clientY-mycanvas.offsetTop;</div><div class="line">			ctx.clearRect(0,0,mycanvas.width,mycanvas.height);</div><div class="line">			x1=xx1;</div><div class="line">			y1=yy1;</div><div class="line">			draw(x1,y1,x2,y2);</div><div class="line">			redBall(x1,y1);</div><div class="line">			blueBall(x2,y2);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	blueBall(x2,y2);</div><div class="line">	//判断鼠标落下的点在不在红球内</div><div class="line">	<span class="keyword">if</span>(ctx.isPointInPath(xx,yy))&#123;</div><div class="line">		console.log(<span class="string">"在蓝球中"</span>);</div><div class="line">		mycanvas.onmousemove=<span class="keyword">function</span>(e)&#123;</div><div class="line">			var ev=e || window.event;</div><div class="line">			var xx1=ev.clientX-mycanvas.offsetLeft;</div><div class="line">			var yy1=ev.clientY-mycanvas.offsetTop;</div><div class="line">			ctx.clearRect(0,0,mycanvas.width,mycanvas.height);</div><div class="line">			x2=xx1;</div><div class="line">			y2=yy1;</div><div class="line">			draw(x1,y1,x2,y2);</div><div class="line">			redBall(x1,y1);</div><div class="line">			blueBall(x2,y2);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">document.onmouseup=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	mycanvas.onmousemove=null;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7432522-8247fba1a1e97cc5.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="0.gif"></p>
+<h4 id="刮刮卡效果"><a href="#刮刮卡效果" class="headerlink" title="刮刮卡效果"></a><code>刮刮卡效果</code></h4><ul>
+<li>在canvas画布中，画布的默认颜色是透明的，并且利用组合图形的相关函数我们可以做出刮刮卡的效果</li>
+<li><code>ctx.globalCompositeOperation</code>设置组合图形的目标图和源图的组合方式</li>
+<li>在canvas中把先画的图叫做目标图，后画的图叫做源图。<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">//目标图</div><div class="line">ctx.beginPath();</div><div class="line">ctx.fillStyle=<span class="string">"gray"</span>;</div><div class="line">ctx.fillRect(0,0,mycanvas.width,mycanvas.height);</div><div class="line">ctx.globalCompositeOperation=<span class="string">"destination-out"</span>;</div><div class="line">//画源图</div><div class="line">mycanvas.onmousedown=<span class="keyword">function</span>(e)&#123;</div><div class="line">	var ev=window.event || e;</div><div class="line">	var x1=ev.clientX-mycanvas.offsetLeft;</div><div class="line">	var y1=ev.clientY-mycanvas.offsetTop;</div><div class="line">	ctx.beginPath();</div><div class="line">	ctx.moveTo(x1,y1);</div><div class="line">	mycanvas.onmousemove=<span class="keyword">function</span>(e)&#123;</div><div class="line">		var ev=window.event || e;</div><div class="line">		var x2=ev.clientX-mycanvas.offsetLeft;</div><div class="line">		var y2=ev.clientY-mycanvas.offsetTop;</div><div class="line">		ctx.lineTo(x2,y2);</div><div class="line">		ctx.lineWidth=23;</div><div class="line">		ctx.lineCap=<span class="string">"round"</span>;</div><div class="line">		ctx.stroke();</div><div class="line">	&#125;</div><div class="line">&#125;	</div><div class="line">document.onmouseup=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	mycanvas.onmousemove=null;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7432522-7caf260979ad62e9.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="b.gif"></p>
+<h4 id="进阶版刮刮卡"><a href="#进阶版刮刮卡" class="headerlink" title="进阶版刮刮卡"></a><code>进阶版刮刮卡</code></h4><ul>
+<li>可以通过对像素点的利用让刮刮卡刮到一半的时候自动刮开。</li>
+<li>即判断所有的像素点透明度为0的点，<code>a</code>的值=0.<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">//目标图</div><div class="line">ctx.beginPath();</div><div class="line">ctx.fillStyle=<span class="string">"gray"</span>;</div><div class="line">ctx.fillRect(0,0,mycanvas.width,mycanvas.height);</div><div class="line">ctx.globalCompositeOperation=<span class="string">"destination-out"</span>;</div><div class="line">//画源图</div><div class="line"></div><div class="line">mycanvas.onmousedown=<span class="keyword">function</span>(e)&#123;</div><div class="line">	var ev=window.event || e;</div><div class="line">	var x1=ev.clientX-mycanvas.offsetLeft;</div><div class="line">	var y1=ev.clientY-mycanvas.offsetTop;</div><div class="line">	ctx.beginPath();</div><div class="line">	ctx.moveTo(x1,y1);</div><div class="line">	mycanvas.onmousemove=<span class="keyword">function</span>(e)&#123;</div><div class="line">		var ev=window.event || e;</div><div class="line">		var x2=ev.clientX-mycanvas.offsetLeft;</div><div class="line">		var y2=ev.clientY-mycanvas.offsetTop;</div><div class="line">		ctx.lineTo(x2,y2);</div><div class="line">		ctx.lineWidth=23;</div><div class="line">		ctx.lineCap=<span class="string">"round"</span>;</div><div class="line">		ctx.stroke();</div><div class="line">		all();</div><div class="line">	&#125;</div><div class="line">&#125;	</div><div class="line">document.onmouseup=<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	mycanvas.onmousemove=null;</div><div class="line">&#125;</div><div class="line">//判断像素点的函数</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">all</span></span>()&#123;</div><div class="line">	var imgData=ctx.getImageData(0,0,mycanvas.width,mycanvas.height);</div><div class="line">	var per=imgData.data.length/8;</div><div class="line">	var count=0;</div><div class="line">	<span class="keyword">for</span>(var i=0;i&lt;imgData.data.length;i+=4)&#123;</div><div class="line">		var a=imgData.data[i+3];</div><div class="line">		<span class="keyword">if</span>(a==0)&#123;</div><div class="line">			count++;</div><div class="line">			<span class="keyword">if</span>(count&gt;=per)&#123;</div><div class="line">				ctx.clearRect(0,0,mycanvas.width,mycanvas.height);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7432522-f80fc0374ce98bea.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="c.gif"></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/zhouxiaona" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 zhouna<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
