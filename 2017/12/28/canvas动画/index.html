@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="图片转码base64
+在css阶段我们知道对图片的处理，优化等需求，对于极小或者极简单的图片我们可以处理成编码64的图片，它有以下好处：
+1.无额外请求。
+2.对于极小或者极简单的图片。
+3.可以向单独图片使用，比如背景图片的重复使用。
+4.没有跨域问题，无需考虑缓存、文件头、cookies问题。
+">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="zhouna">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="canvas动画"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="web前端开发"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>canvas动画 - web前端开发</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="github">
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Welcome to Lala's blog!</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/zhouxiaona">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/about-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>canvas动画</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-12-28
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="图片转码base64"><a href="#图片转码base64" class="headerlink" title="图片转码base64"></a>图片转码base64</h2><ul>
+<li>在css阶段我们知道对图片的处理，优化等需求，对于极小或者极简单的图片我们可以处理成编码64的图片，<br>它有以下好处：</li>
+<li>1.无额外请求。</li>
+<li>2.对于极小或者极简单的图片。</li>
+<li>3.可以向单独图片使用，比如背景图片的重复使用。</li>
+<li>4.没有跨域问题，无需考虑缓存、文件头、cookies问题。</li>
+<li>在canvas中我们也可以把canvas画布转换成base64编码格式储存成图片使用。</li>
+<li>通过<code>img</code>标签的<code>src</code>属性获得到的是图片的绝对路径，不是相对路径。<h3 id="图片转成base64方式"><a href="#图片转成base64方式" class="headerlink" title="图片转成base64方式"></a>图片转成base64方式</h3></li>
+<li><p><code>方式一：通过fileReader实例对象</code>===&gt;<code>fileRead.readAsDataURL(files);</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;input <span class="built_in">type</span>=<span class="string">"file"</span> id=<span class="string">"myfiles"</span> onchange=<span class="string">"sub()"</span>&gt;</div><div class="line">//js====</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">sub</span></span>()&#123;</div><div class="line">	var files=document.getElementById(<span class="string">"myfiles"</span>).files[0];</div><div class="line">	var fileRead=new FileReader(files);</div><div class="line">	fileRead.readAsDataURL(files);</div><div class="line">	fileRead.onload=<span class="keyword">function</span>(e)&#123;</div><div class="line">		var base64=e.target.result;</div><div class="line">		var img=new Image();</div><div class="line">		img.src=base64;</div><div class="line">		document.getElementsByTagName(<span class="string">"body"</span>)[0].appendChild(img);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>方式二：canvas画布转成base64格式图片</code>===&gt;<code>canvas.toDataURL();</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">ctx.beginPath();</div><div class="line">ctx.fillStyle=<span class="string">"pink"</span>;</div><div class="line">ctx.fillRect(100,100,200,200);</div><div class="line"></div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">sub</span></span>()&#123;</div><div class="line">	var base64=mycanvas.toDataURL();</div><div class="line">	console.log(base64);</div><div class="line">	var img=new Image();</div><div class="line">	img.src=base64;</div><div class="line">	document.getElementsByTagName(<span class="string">"body"</span>)[0].appendChild(img);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="setInterVal和window-requestAnimationFrame-act"><a href="#setInterVal和window-requestAnimationFrame-act" class="headerlink" title="setInterVal和window.requestAnimationFrame(act);"></a><code>setInterVal</code>和<code>window.requestAnimationFrame(act);</code></h2><ul>
+<li>通过<code>setInterVal</code>和<code>window.requestAnimationFrame(act);</code>来实现canvas动画</li>
+<li>前者使用定时器使我们常用的动画办法，可是这种办法太过消耗性能，为了更加优化代码和节约计算机性能，我们采用<code>window.requestAnimationFrame(act);</code>办法。</li>
+<li>相比较计时器，后者更加节省性能，更加完善，更加适合做动画。</li>
+<li>计时器里，我们可以通过改变执行函数的描述来改变动画的速度，后者可以通过<code>取余</code>来减慢动画执行的速度。</li>
+<li>canvas动画的执行过程就是不断的清空画布，更新开始画的起始点，然后再绘制图片，机会产生动画效果。<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var num=0;</div><div class="line">var num1=0;</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">test</span></span>()&#123;</div><div class="line">	num++;</div><div class="line">	<span class="keyword">if</span>(num%100==0)&#123;</div><div class="line">		num1++;</div><div class="line">		document.title=num1;</div><div class="line">	&#125;</div><div class="line">	window.requestAnimationFrame(<span class="built_in">test</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">test</span>();//执行该函数</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="canvas视频"><a href="#canvas视频" class="headerlink" title="canvas视频"></a>canvas视频</h2><ul>
+<li>在canvas画布上不仅可以画图片，还可以画视频，同样也可以根据<code>ctx.getImageData(video,0,0)</code>来获取视频的所有像素点,进而对视频进行像素的有关反色，变色处理。<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">act</span></span>()&#123;</div><div class="line">	ctx.beginPath()；</div><div class="line">	ctx.drawImage(video,0,0);</div><div class="line">	res=window.requestAnimationFrame(act);</div><div class="line">&#125;</div><div class="line">act();</div><div class="line">//取消此动画</div><div class="line">cancelAnimationFrame(act);</div><div class="line">//播放视频</div><div class="line">video.play();</div><div class="line">//暂停视频</div><div class="line">video.pause();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/zhouxiaona" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 zhouna<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
