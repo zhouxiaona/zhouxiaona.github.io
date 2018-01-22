@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="使用语法建立服务器（基于webstrom编辑器）
+nodeJs属于后端的javascript,只在后端进行运行的语言，在前台输出，逻辑运行在服务端
+引入http模块
+req==&amp;gt;request请求:浏览器提交给服务器相关
+res==&amp;gt;response回复：服务器到浏览器相关
+更改服务器里">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="zhouna">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="nodeJs初始"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="web前端开发"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>nodeJs初始 - web前端开发</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="github">
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Welcome to Lala's blog!</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/zhouxiaona">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/about-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>nodeJs初始</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-01-22
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="使用语法建立服务器（基于webstrom编辑器）"><a href="#使用语法建立服务器（基于webstrom编辑器）" class="headerlink" title="使用语法建立服务器（基于webstrom编辑器）"></a>使用语法建立服务器（基于webstrom编辑器）</h2><ul>
+<li>nodeJs属于后端的javascript,只在后端进行运行的语言，在前台输出，逻辑运行在服务端</li>
+<li>引入http模块</li>
+<li>req==&gt;request请求:浏览器提交给服务器相关</li>
+<li>res==&gt;response回复：服务器到浏览器相关</li>
+<li>更改服务器里的代码时，需要重新启动服务器</li>
+<li>设置代码格式的三种方法：<blockquote>
+<p>text/html解析标签&lt;====&gt;text/plan不解析标签<br>res.setHeader(“Content-type”,”text/html;charset=utf8”);<br>res.writeHeader(200,{“Content-type”:”text/html;charset=utf8”});<br>res.write(“<head><meta charset="utf-8"></head>“);</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var http=require(<span class="string">"http"</span>);</div><div class="line">var server=http.createServer(<span class="keyword">function</span>(req,res)&#123;</div><div class="line">   res.setHeader(<span class="string">"Content-type"</span>,<span class="string">"text/html;charset=utf8"</span>);</div><div class="line">    res.write(<span class="string">"你好"</span>);</div><div class="line">    res.end();</div><div class="line">&#125;);</div><div class="line">//设置端口号，通过localhost：端口号进行访问</div><div class="line">server.listen(8789);</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p>结果如下：<br><img src="http://upload-images.jianshu.io/upload_images/7432522-b7eebd11d9f3becc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="访问端口号的结果"></p>
+<h2 id="使用模块"><a href="#使用模块" class="headerlink" title="使用模块"></a>使用模块</h2><h4 id="1-预定义模块的使用下载"><a href="#1-预定义模块的使用下载" class="headerlink" title="1. 预定义模块的使用下载"></a>1. 预定义模块的使用下载</h4><blockquote>
+<p>编辑器webstrom可以追函数，按住ctrl or command鼠标悬浮于函数之上，如若可以点击说明此模块已下载，可以直接使用。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//引用http模块</div><div class="line">var http=require(<span class="string">"http"</span>);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="2-自定义模块的使用格式"><a href="#2-自定义模块的使用格式" class="headerlink" title="2. 自定义模块的使用格式"></a>2. 自定义模块的使用格式</h4><blockquote>
+<p>建立两个js文件test1.js, test2.js，在test1.js文件里引用test2.js里的函数和变量并输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//test2.js</div><div class="line">var a=&quot;hello,world&quot;;</div><div class="line">var fn=function()&#123;</div><div class="line">console.log(&quot;我是test2.js里的函数&quot;);</div><div class="line">&#125;</div><div class="line">module.exports=&#123;</div><div class="line">a,</div><div class="line">fn</div><div class="line">&#125;</div><div class="line">//test1.js</div><div class="line">var http=require(&quot;http&quot;);</div><div class="line">var test2=require(&quot;./test2&quot;);</div><div class="line">var server=http.createServer(function(req,res)&#123;</div><div class="line">res.setHeader(&quot;Content-type&quot;,&quot;text/html;charset=utf8&quot;);</div><div class="line">console.log(test1.a);</div><div class="line">test1.fn();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>结果如图：<br><img src="http://upload-images.jianshu.io/upload_images/7432522-935eaae84a91003d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="模快引入打印结果"></p>
+<h4 id="3-模块语言的使用方式"><a href="#3-模块语言的使用方式" class="headerlink" title="3.  模块语言的使用方式"></a>3.  模块语言的使用方式</h4><blockquote>
+<p>如果是通过下载得来的模块，引用可以使用<code>require(&quot;预定义名称&quot;);</code>,如果是自定义的格式为<code>require(&quot;./fnCommon&quot;);</code>。<br>自己定义的模块可以通过命令<code>jade -P -w 主入口文件名</code>修改主入口文件。</p>
+<h2 id="通过get传参"><a href="#通过get传参" class="headerlink" title="通过get传参"></a>通过get传参</h2><p>在ajax中可以通过发送请求，<code>post</code>或者<code>get</code>方式，在<code>nodeJs</code>中也可以得到<code>get</code>方式的参数，并把它输出到页面,引入<code>url</code>模块即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var http=require(&quot;http&quot;);</div><div class="line">var url=require(&quot;url&quot;);</div><div class="line">var server=http.createServer(function(req,res)&#123;</div><div class="line">res.setHeader(&quot;Content-type&quot;,&quot;text/html;charset=utf8&quot;);</div><div class="line">var result=url.parse(req.url,true);</div><div class="line">var name=result.query.name;</div><div class="line">var age=result.query.age;</div><div class="line">res.write(`姓名是$&#123;name&#125;;&lt;/br&gt;年龄是$&#123;age&#125;`);</div><div class="line">res.end();</div><div class="line">&#125;);</div><div class="line">server.listen(8787);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>结果如图：<br><img src="http://upload-images.jianshu.io/upload_images/7432522-b451188ddd2eb363.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="传参结果如图"></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/zhouxiaona" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 zhouna<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
