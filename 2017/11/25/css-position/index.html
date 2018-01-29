@@ -10,6 +10,11 @@
 
     <!--Description-->
     
+        <meta name="description" content="今天学习了关于html中关于定位这个属性的认识，position共有常用的四个值，分别为position:fixed | static | relative | absolute;下面我们来具体分析这四个值的区别。
+###fixed,固定定位：
+
+相对于浏览器视口进行偏移，分为四个方向上的设置lef">
+    
 
     <!--Author-->
     
@@ -18,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="web前端开发"/>
+        <meta property="og:title" content="css-position"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +34,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +45,7 @@
 
     <!-- Title -->
     
-    <title>web前端开发</title>
+    <title>css-position - web前端开发</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -145,188 +150,80 @@
 
     <!-- Main Content -->
     <!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/about-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>web前端开发</h1>
-                    <hr class="small">
-                    <span class="subheading">面条君的个人博客</span>
+                <div class="post-heading">
+                    <h1>css-position</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-11-25
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-                <div class="post-preview">
-    <a href="/2018/01/29/盒模型初始/">
-        <h2 class="post-title">
-            盒模型初始
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-29
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/29/table标签/">
-        <h2 class="post-title">
-            table标签
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-29
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/29/nodeJs之stream/">
-        <h2 class="post-title">
-            nodeJs之stream
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-29
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/24/nodeJs之fs模块/">
-        <h2 class="post-title">
-            nodeJs之fs模块
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-24
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/22/ES6promise与ES5回调/">
-        <h2 class="post-title">
-            ES6promise与ES5回调
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-22
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/22/nodeJs初始/">
-        <h2 class="post-title">
-            nodeJs初始
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-22
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/12/28/canvas动画/">
-        <h2 class="post-title">
-            canvas动画
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-12-28
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/12/27/canvas进阶2/">
-        <h2 class="post-title">
-            canvas进阶2
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-12-27
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/12/26/canvas进阶/">
-        <h2 class="post-title">
-            canvas进阶
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-12-26
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/12/25/canvas基础/">
-        <h2 class="post-title">
-            canvas基础
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-12-25
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
 
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/page/2/">上一页  &rarr;</a></li>
-    
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>今天学习了关于html中关于定位这个属性的认识，position共有常用的四个值，分别为<code>position:fixed | static | relative | absolute;</code>下面我们来具体分析这四个值的区别。</p>
+<p>###<code>fixed</code>,固定定位：</p>
+<ul>
+<li>相对于浏览器视口进行偏移，分为四个方向上的设置<code>left | top | right | bottom</code>，通常四个都设置的话，后两个不会生效。</li>
+<li>设置固定定位的元素完全脱离文档流，如果继续给元素设置<code>float</code>属性，不会生效。</li>
+<li>设置了定位的元素会改变默认的样式表现，这一点跟<code>float</code>很像，可以认为是<code>display:inline-block;</code>可以设置宽高，不设置时由内容撑开，块标签会失去默认继承父级的宽度，行标签可以设置宽高。</li>
+<li>给元素设置了定位后，一定要给元素初始化位置。</li>
+<li>相同级别的定位元素，后写的会覆盖前面的，这时候用<code>index</code>属性设置元素的层级，<code>index</code>的值要整10的加，才会符合规范。<code>index=0;</code>的层级高于普通文档流，高于<code>float</code>,与同级的没有设置<code>index</code>定位元素无影响，后设置的覆盖前者。<code>z-index</code>还可以设置负值，例如<code>z-index:-1;</code>此时该元素的文档层级低于普通文档流，低于<code>float</code>元素。</li>
 </ul>
+<p>###<code>absolute</code>，绝对定位：</p>
+<ul>
+<li>绝对定位跟<code>fixed</code>固定定位大致相同，只有一点，就是若设置绝对定位的元素的父级或以上父级没有设置定位的话，那该元素就会相对于文档的位置进行偏移，若其父级或以上父级设置了定位，那该元素就会相对于父级的位置进行偏移，所以在日常使用中经常给父级元素添加<code>position:relative;</code>语句，既不影响父级元素的样式又可以给该元素设置绝对定位。</li>
+<li>除了以上所述，绝对定位的特点跟固定定位一模一样。</li>
+</ul>
+<p>###<code>relative</code>,相对定位</p>
+<ul>
+<li>相对定位是定位中的一股清流了，设置该定位的元素相对于当前自身的位置进行偏移，其在文档流中所占的位置不会被释放，效果等同于不会脱离文档流，所以他不会对元素的样式有影响。</li>
+<li>还有就是它不会改变元素的默认样式，即不会让块级元素变成由内容撑开宽高的元素，更不会让行级元素可以设置宽高。</li>
+</ul>
+<p>###<code>static</code></p>
+<ul>
+<li>该定位不经常用，但是经检验，发现它就是<code>position</code>的默认值，不会脱离文档流，跟<code>relative</code>很像。<br>好了，今天就这样愉快地结束了，下次聊。</li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />

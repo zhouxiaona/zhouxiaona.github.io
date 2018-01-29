@@ -10,6 +10,11 @@
 
     <!--Description-->
     
+        <meta name="description" content="CSS基础选择器简单分为四类：
+一是通配选择器，即 *{样式设置；}。就是作用于所有的标签，无论你写没写，有没有出现在文档中。
+二是标签名选择器，即 标签名{样式设置；}。就是作用于一类标签，方式是通过标签名。它的使用场景就是重置某类标签的默认样式。
+三是群组选择器，即 选择器1，选择器2，选择器3">
+    
 
     <!--Author-->
     
@@ -18,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="web前端开发"/>
+        <meta property="og:title" content="CSS基础选择器以及使用场景"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +34,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +45,7 @@
 
     <!-- Title -->
     
-    <title>web前端开发</title>
+    <title>CSS基础选择器以及使用场景 - web前端开发</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -145,188 +150,63 @@
 
     <!-- Main Content -->
     <!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/about-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>web前端开发</h1>
-                    <hr class="small">
-                    <span class="subheading">面条君的个人博客</span>
+                <div class="post-heading">
+                    <h1>CSS基础选择器以及使用场景</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-09-21
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-                <div class="post-preview">
-    <a href="/2018/01/29/盒模型初始/">
-        <h2 class="post-title">
-            盒模型初始
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-29
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/29/table标签/">
-        <h2 class="post-title">
-            table标签
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-29
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/29/nodeJs之stream/">
-        <h2 class="post-title">
-            nodeJs之stream
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-29
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/24/nodeJs之fs模块/">
-        <h2 class="post-title">
-            nodeJs之fs模块
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-24
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/22/ES6promise与ES5回调/">
-        <h2 class="post-title">
-            ES6promise与ES5回调
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-22
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/22/nodeJs初始/">
-        <h2 class="post-title">
-            nodeJs初始
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-22
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/12/28/canvas动画/">
-        <h2 class="post-title">
-            canvas动画
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-12-28
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/12/27/canvas进阶2/">
-        <h2 class="post-title">
-            canvas进阶2
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-12-27
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/12/26/canvas进阶/">
-        <h2 class="post-title">
-            canvas进阶
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-12-26
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/12/25/canvas基础/">
-        <h2 class="post-title">
-            canvas基础
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-12-25
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
 
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/page/2/">上一页  &rarr;</a></li>
-    
-</ul>
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>CSS基础选择器简单分为四类：</p>
+<p>一是通配选择器，即 *{样式设置；}。就是作用于所有的标签，无论你写没写，有没有出现在文档中。</p>
+<p>二是标签名选择器，即 标签名{样式设置；}。就是作用于一类标签，方式是通过标签名。它的使用场景就是重置某类标签的默认样式。</p>
+<p>三是群组选择器，即 选择器1，选择器2，选择器3，…{样式设置；}。常用于优化代码，减少文档体积。</p>
+<p>四是类选择器，即 .类名称（样式设置；}。用于各种场景，是我们最常用的一种选择器，class名可以有多个，class名之间用空格隔开，主要用于具有相同样式的元素。还有额外扩充class名的取名规范，一是不要以数字开头，尽量取得有意义，二是多个单词尽量使用下划线连接。</p>
+<p>五是后代选择器，即 选择器1 选择器2 选择器3 …{样式设置；}。样式作用于最后一个选择器，前面的知识过滤作用，帮助我们定位。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />

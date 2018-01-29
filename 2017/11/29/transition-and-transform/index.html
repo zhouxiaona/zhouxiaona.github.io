@@ -10,6 +10,15 @@
 
     <!--Description-->
     
+        <meta name="description" content="##transition过渡
+###有四个属性，分别为
+
+trnasition-property过渡属性，指定为哪个属性设置过渡效果。默认值为all。
+
+transition-duration过渡步长，即完成整个过渡需要的时间，默认0秒，可以设置小数。
+
+timing-function过渡的动画效果">
+    
 
     <!--Author-->
     
@@ -18,7 +27,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="web前端开发"/>
+        <meta property="og:title" content="transition and transform"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +38,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +49,7 @@
 
     <!-- Title -->
     
-    <title>web前端开发</title>
+    <title>transition and transform - web前端开发</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -145,188 +154,101 @@
 
     <!-- Main Content -->
     <!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/about-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>web前端开发</h1>
-                    <hr class="small">
-                    <span class="subheading">面条君的个人博客</span>
+                <div class="post-heading">
+                    <h1>transition and transform</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-11-29
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-                <div class="post-preview">
-    <a href="/2018/01/29/盒模型初始/">
-        <h2 class="post-title">
-            盒模型初始
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-29
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/29/table标签/">
-        <h2 class="post-title">
-            table标签
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-29
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/29/nodeJs之stream/">
-        <h2 class="post-title">
-            nodeJs之stream
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-29
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/24/nodeJs之fs模块/">
-        <h2 class="post-title">
-            nodeJs之fs模块
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-24
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/22/ES6promise与ES5回调/">
-        <h2 class="post-title">
-            ES6promise与ES5回调
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-22
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/22/nodeJs初始/">
-        <h2 class="post-title">
-            nodeJs初始
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-22
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/12/28/canvas动画/">
-        <h2 class="post-title">
-            canvas动画
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-12-28
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/12/27/canvas进阶2/">
-        <h2 class="post-title">
-            canvas进阶2
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-12-27
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/12/26/canvas进阶/">
-        <h2 class="post-title">
-            canvas进阶
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-12-26
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/12/25/canvas基础/">
-        <h2 class="post-title">
-            canvas基础
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-12-25
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
 
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/page/2/">上一页  &rarr;</a></li>
-    
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>##transition过渡</p>
+<p>###有四个属性，分别为</p>
+<ul>
+<li><p><code>trnasition-property</code>过渡属性，指定为哪个属性设置过渡效果。默认值为<code>all</code>。</p>
+</li>
+<li><p><code>transition-duration</code>过渡步长，即完成整个过渡需要的时间，默认0秒，可以设置小数。</p>
+</li>
+<li><p><code>timing-function</code>过渡的动画效果，默认为<code>ease</code>，<code>ease-in | ease-out | ease-in-out | cubic-bezier(0.99,-0.27, 0.02, 1.69)贝塞尔曲线</code>.</p>
+</li>
+<li><p><code>transition-delay</code>过渡延迟，即过多长时间开始过渡效果，默认0秒。</p>
+</li>
+<li><p>可以分开设置，最多的都是符合写法，即<code>transition: transition-property transition-duration  timing-function transition-delay;</code></p>
+</li>
 </ul>
+<p>##transform变形</p>
+<p>###transform:translate(x,y) | translateX( ) | transformY( );在x轴上和y轴上的位移</p>
+<ul>
+<li><p><code>transform:translate(x,y);</code>表示元素在x轴上位移<code>xpx</code>的距离，在y轴上偏移<code>ypx</code>距离。还可以设置负数，表示向相反方向偏移。</p>
+</li>
+<li><p><code>transform:translateX(); | transform:translateY();</code>分别表示在x轴上和y轴上的偏移量。</p>
+</li>
+<li><p><code>transform:translate();</code>只设置一个值的时候，表示在x轴上的偏移。<br>###transform:rotate() | rotateX() | rotateY(); 2D旋转，单位为deg，角度</p>
+</li>
+<li><p><code>transform:rotate();</code>表示围绕z轴旋转一定的角度，正数表示顺时针，负数表示逆时针。</p>
+</li>
+<li><p><code>transform:rotateX(); | transform:rotateY();</code>分别表示沿着x轴和y轴旋转角度。</p>
+</li>
+</ul>
+<p>###transform:scale(); | scaleX(); | scaleY();缩放比例或变形，<em>zoom也可以设置缩放，但是不支持transition设置,而且不以中心点进行缩放</em></p>
+<ul>
+<li><p><code>transform:scale();</code>一个值表示沿着中心点进行缩放一定的比例。分别沿着x轴和y轴，可以设置负数，由外向里进行缩放。</p>
+</li>
+<li><p><code>transform:scaleX(); | scaleY();</code>分别表示沿着x轴和y轴进行缩放一定比例。</p>
+</li>
+<li><p>它的使用场景就是设置字体大小小于12px的字体大小。</p>
+</li>
+</ul>
+<p>###transiform:skew(); | skewX(); | skewY();绕着Ｘ轴和Ｙ轴进行倾斜,*这里的x轴和y轴和平时的两个轴刚好反过来</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7432522-c6a0e7621917dff3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="倾斜语法"></p>
+<p>还有结果图为:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7432522-e2eb195bf66f94e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="倾斜结果"></p>
+<ul>
+<li><code>transform:skew();</code>设置为绕着x轴进行倾斜。单位为<code>deg</code>角度。</li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />

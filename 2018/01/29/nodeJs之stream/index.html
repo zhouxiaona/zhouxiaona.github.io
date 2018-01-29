@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="之前学习了fs文件模块，我们可以通过建立服务器把自己的页面内容通过fs.readFileSync()函数读取出来，再通过res.write(data)把读取文件内容结果输出，这样就可以把页面渲染出来，但是fs模块还是有局限，对于小的文件操作非常方便，但是如果做一个大的项目，牵扯的文件目录多了，fs模">
+    
 
     <!--Author-->
     
@@ -180,7 +182,23 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                
+                <p>之前学习了<code>fs</code>文件模块，我们可以通过建立服务器把自己的页面内容通过<code>fs.readFileSync()</code>函数读取出来，再通过<code>res.write(data)</code>把读取文件内容结果输出，这样就可以把页面渲染出来，但是<code>fs</code>模块还是有局限，对于小的文件操作非常方便，但是如果做一个大的项目，牵扯的文件目录多了，<code>fs</code>模块就会非常有局限性，所以就有了下面所介绍的<code>stream</code>流的概念。</p>
+<h3 id="可读流fs-createReadStream-quot-2-txt-quot"><a href="#可读流fs-createReadStream-quot-2-txt-quot" class="headerlink" title="可读流fs.createReadStream(&quot;2.txt&quot;)"></a>可读流<code>fs.createReadStream(&quot;2.txt&quot;)</code></h3><ul>
+<li>创建一个可读流，可以读取文件内容，他可以把文件大小划分流大小来读，这样就可以防止文件读取爆仓。</li>
+<li>文件过大会导致渲染页面延迟，所以流的读取方式可以解决这一点。<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var fs=require(<span class="string">"fs"</span>);</div><div class="line">var rs=fs.createReadStream(<span class="string">"2.txt"</span>);</div><div class="line">rs.on(<span class="string">"data"</span>,<span class="keyword">function</span>(chunk)&#123;</div><div class="line">      console.log(chunk.toString());//chunk是一个buffer类型的数据,需要转换</div><div class="line">&#125;);</div><div class="line">rs.on(<span class="string">"end"</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">    console.log(<span class="string">"文件读取完毕"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="可写流fs-createWriteStream-quot-3-txt-quot"><a href="#可写流fs-createWriteStream-quot-3-txt-quot" class="headerlink" title="可写流fs.createWriteStream(&quot;3.txt&quot;)"></a>可写流<code>fs.createWriteStream(&quot;3.txt&quot;)</code></h3><ul>
+<li>创建一个可写流，写的内容为可读流读取的结果，实现简单的文件复制。</li>
+<li><code>piep()</code>方法实现流的流动。<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var fs=require(<span class="string">"fs"</span>);</div><div class="line">var ws=fs.createWriteStream(<span class="string">"text"</span>);</div><div class="line">rs.pipe(ws);//使用pipe()方法，可以把可读流的读取内容写到可读流里。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="爬虫crawler"><a href="#爬虫crawler" class="headerlink" title="爬虫crawler"></a>爬虫<code>crawler</code></h3><ul>
+<li>根据读取文件的这种应用，我们可以读取别的网站，获取别的网站的内容，进而获取到网站数据，做一个简单的呈现.<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">var http=require(<span class="string">"http"</span>);</div><div class="line">var cheerio=require(<span class="string">"cheerio"</span>);</div><div class="line"><span class="keyword">function</span> getData(str)&#123;</div><div class="line">    var $=cheerio.load(str);  </div><div class="line">    //要爬取的部分内容的类名</div><div class="line">    var arr=$(<span class="string">".link-dark"</span>);</div><div class="line">    var dataTemp=[];</div><div class="line">    arr.each(<span class="keyword">function</span>(k,v)&#123;</div><div class="line">        var title=$(v).text();</div><div class="line">        var obj=&#123;</div><div class="line">            id:(k+1),</div><div class="line">            content:title</div><div class="line">        &#125;</div><div class="line">        dataTemp.push(obj);</div><div class="line">    &#125;)</div><div class="line">    <span class="built_in">return</span> dataTemp;</div><div class="line">&#125;</div><div class="line">var server=http.createServer(<span class="keyword">function</span>(req,res)&#123;</div><div class="line">    res.setHeader(<span class="string">"Content-type"</span>,<span class="string">"text/html;charset='utf8'"</span>);</div><div class="line">    //要爬取的网址</div><div class="line">    var dataUrl=<span class="string">"http://ok.lanou3g.com"</span>;</div><div class="line">    http.get(dataUrl,<span class="keyword">function</span>(ress)&#123;</div><div class="line">        var str=<span class="string">""</span>;</div><div class="line">        ress.on(<span class="string">"data"</span>,<span class="keyword">function</span>(chunk)&#123;</div><div class="line">              str+=chunk;</div><div class="line">        &#125;);</div><div class="line">        ress.on(<span class="string">"end"</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">            var data=getData(str);</div><div class="line">            <span class="keyword">for</span>(var i=0;i&lt;data.length;i++)&#123;</div><div class="line">                res.write(`&lt;p&gt;<span class="variable">$&#123;data[i]['content']&#125;</span>&lt;/p&gt;`);</div><div class="line">            &#125;</div><div class="line">            res.end();</div><div class="line">        &#125;)</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7432522-2631756d46d190ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="结果照"></p>
+
 
                 
             </div>

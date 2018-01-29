@@ -10,6 +10,9 @@
 
     <!--Description-->
     
+        <meta name="description" content="昨天讲到了css中的选择器类型，共六种，分别为id选择器，通用选择器，标签名选择器，群组选择器，类选择器，后代选择器。
+优先级分别为：!importent(慎用，用的话需要注释说明) 　&amp;gt;　 style　 &amp;gt; 　id选择器 &amp;gt; 类选择器 　&amp;gt;　 标签名选择器　&amp;gt; 通用选">
+    
 
     <!--Author-->
     
@@ -18,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="web前端开发"/>
+        <meta property="og:title" content="css基础选择器的优先级"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +32,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>web前端开发</title>
+    <title>css基础选择器的优先级 - web前端开发</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -145,188 +148,59 @@
 
     <!-- Main Content -->
     <!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/about-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>web前端开发</h1>
-                    <hr class="small">
-                    <span class="subheading">面条君的个人博客</span>
+                <div class="post-heading">
+                    <h1>css基础选择器的优先级</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-09-22
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-                <div class="post-preview">
-    <a href="/2018/01/29/盒模型初始/">
-        <h2 class="post-title">
-            盒模型初始
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-29
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/29/table标签/">
-        <h2 class="post-title">
-            table标签
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-29
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/29/nodeJs之stream/">
-        <h2 class="post-title">
-            nodeJs之stream
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-29
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/24/nodeJs之fs模块/">
-        <h2 class="post-title">
-            nodeJs之fs模块
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-24
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/22/ES6promise与ES5回调/">
-        <h2 class="post-title">
-            ES6promise与ES5回调
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-22
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/01/22/nodeJs初始/">
-        <h2 class="post-title">
-            nodeJs初始
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-01-22
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/12/28/canvas动画/">
-        <h2 class="post-title">
-            canvas动画
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-12-28
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/12/27/canvas进阶2/">
-        <h2 class="post-title">
-            canvas进阶2
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-12-27
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/12/26/canvas进阶/">
-        <h2 class="post-title">
-            canvas进阶
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-12-26
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/12/25/canvas基础/">
-        <h2 class="post-title">
-            canvas基础
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-12-25
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
 
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/page/2/">上一页  &rarr;</a></li>
-    
-</ul>
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>昨天讲到了css中的选择器类型，共六种，分别为id选择器，通用选择器，标签名选择器，群组选择器，类选择器，后代选择器。</p>
+<p>优先级分别为：!importent(慎用，用的话需要注释说明) 　&gt;　 style　 &gt; 　id选择器 &gt; 类选择器 　&gt;　 标签名选择器　&gt; 通用选择器。群组选择器的优先级是不叠加的，后代选择器的优先级是叠加的。同样的选择器，后写的代码生效。就是这么水的一篇博客，就这样。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
