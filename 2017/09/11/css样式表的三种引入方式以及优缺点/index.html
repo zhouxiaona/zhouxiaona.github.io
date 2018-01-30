@@ -10,6 +10,9 @@
 
     <!--Description-->
     
+        <meta name="description" content="按照惯例，首先介绍第一种，也是最容易入手的一种， 专业名字叫作行间样式表。二话不说，先上图。
+行间样式表这是直接在标签里的style属性里进行样式设置的一种方式，当然后面会提到这种方式的优先级会高于其他两种。然后就是它的优缺点了，首先优点：不会产生额外的请求。缺点：一、容易产生重复的代码，造成文档体">
+    
 
     <!--Author-->
     
@@ -18,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="web前端开发"/>
+        <meta property="og:title" content="css样式表的三种引入方式以及优缺点"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +32,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>page - web前端开发</title>
+    <title>css样式表的三种引入方式以及优缺点 - web前端开发</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -145,158 +148,64 @@
 
     <!-- Main Content -->
     <!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/about-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>web前端开发</h1>
-                    <hr class="small">
-                    <span class="subheading">面条君的个人博客</span>
+                <div class="post-heading">
+                    <h1>css样式表的三种引入方式以及优缺点</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-09-11
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-                <div class="post-preview">
-    <a href="/2017/09/20/常见布局：一段固定，另一端自适应/">
-        <h2 class="post-title">
-            常见布局：一段固定，另一端自适应
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-09-20
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/09/19/盒模型初始/">
-        <h2 class="post-title">
-            盒模型初始
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-09-19
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/09/14/阴影与清除浮动/">
-        <h2 class="post-title">
-            阴影与清除浮动
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-09-14
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/09/13/渐变and倒影and遮罩层mask/">
-        <h2 class="post-title">
-            渐变and倒影and遮罩层mask
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-09-13
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/09/13/3D变换/">
-        <h2 class="post-title">
-            3D变换
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-09-13
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/09/11/css样式表的三种引入方式以及优缺点/">
-        <h2 class="post-title">
-            css样式表的三种引入方式以及优缺点
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-09-11
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/09/11/flex弹性初识/">
-        <h2 class="post-title">
-            flex弹性初识
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-09-11
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2017/09/11/hello-world/">
-        <h2 class="post-title">
-            Hello World
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-09-11
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
 
-            <ul class="pager">
-    
-        <li class="previous"><a href="/page/4/">&larr;  下一页</a></li>
-    
-    
-</ul>
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>按照惯例，首先介绍第一种，也是最容易入手的一种， 专业名字叫作行间样式表。二话不说，先上图。</p>
+<p>行间样式表<br>这是直接在标签里的style属性里进行样式设置的一种方式，当然后面会提到这种方式的优先级会高于其他两种。然后就是它的优缺点了，首先优点：不会产生额外的请求。缺点：一、容易产生重复的代码，造成文档体积变大。二、不利于维护。三、不符合结构与样式分离的规范。</p>
+<p>第二种专业名字叫作内部样式表，也是先上图。</p>
+<p>内部样式表<br>内部样式表是在<head></head>标签里进行style样式设置的一种方式。这种方式优点就是跟行间样式表相同不会产生额外的请求，再是它初步实现了结构与样式的分离，还有它适合单页面网站应用，缺点就是代码复用不方便，因为我们在对元素进行设置样式的时候，可能遇到需要把几个元素设置成相同的样式，这样的话，内部样式表就不方便我们的使用。</p>
+<p>第三种就是我们最常用，也是最规范方便的一种方式了，叫作外部样式表，如图。</p>
+<p>外部样式表<br>这种方式就是将样式设置单独写在了一个css文件中，然后在html文件中用Link引入，这种方式就造成了一个缺点就是在执行html文档的时候，会产生额外的请求，不过在后面我们会借助工具抹平这个缺点。优点就是一、利于后期的维护。二是可以重复使用。三是实现了结构与样式分离的规范。</p>
+<p>这就是三种层叠样式表的引入方法以及它们的优缺点啦。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
